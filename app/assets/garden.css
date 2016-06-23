@@ -1,0 +1,181 @@
+
+.dash-title{
+  background-color: #292323;
+  color: #fff;
+  height: 125px;
+  margin-bottom: 2%;
+  border-bottom: solid 3px #4aff7b;
+}
+.dash-title h1{
+  font-family: 'geosans', Calibri, Arial, sans-serif;
+  font-size: 4.5em;
+  /* margin-top: 0; */
+  /* padding-top: 0; */
+  /* vertical-align: top; */
+  display: table-cell;
+padding: 11% 0;
+    text-transform: uppercase;
+}
+.dashboard-box{
+  height: 200px;
+  background-color: rgba(14, 3, 0, 0.4);
+  width: 32%;
+  padding: 0;
+  border-radius: 10px;
+
+}
+.dahs-details{
+    margin-bottom: 2%;
+}
+.dashboard-box h2, .dash-desc h1  {
+  font-family: 'Montserrat', Calibri, Arial, sans-serif;
+  color: #000;
+  text-transform: uppercase;
+  font-size: 1em;
+  text-align: left;
+  margin-top: 0;
+
+}
+.dashboard-box h2, .dash-desc h1{
+  padding: 24px 0 24px 20px;
+  border-radius: 10px 10px 0 0;
+}
+.dash-desc h1{
+  font-size: 1em;
+  background-color: rgba(255, 255, 255, 0.73);
+  border-radius: 10px 10px 0 0;
+}
+.dash-desc p{
+  color: #fff;
+  font-size: 1em;
+  font-family: 'geosans', Calibri, Arial, sans-serif;
+  margin: 12% 8%;padding-left: 3%;
+  border-left: solid 3px rgba(192, 192, 192, 0.86);
+}
+.dashboard-box p{
+  font-family: 'geosans', Calibri, Arial, sans-serif;
+  color: #fff;
+
+  color: #fff;
+  font-size: 3em;
+  text-align: right;
+  padding-right: 35px;
+}
+.dash-desc-box, .dash-details{
+  height: 450px;
+}
+.dashboard-container{
+  width: 70%;
+  margin: 0 auto;
+}
+.dashboard-container .row, .dash-desc .row{
+  margin: 0 0 2% 0;
+}
+.dash-desc-box{
+  background-color: rgba(14, 3, 0, 0.4);
+  padding: 0;
+  border-radius: 10px;
+}
+.dash-desc button{
+
+  margin: 0 auto;
+  display: inherit;
+}
+.dash-temp, .dash-hum{
+  margin-right: 1%;
+  height: 210px;
+
+}
+.dash-water, .dash-air {
+  margin: 0 1%;
+  height: 210px;
+
+}
+.dash-light, .dash-irrig {
+  float: right;
+  height: 210px;
+
+}
+
+.dash-temp h2{
+  border-left:solid 9px rgb(255, 114, 47);
+  background-color: rgba(255, 255, 255, 0.73);
+
+}
+.dash-water h2{
+  border-left:solid 9px rgb(55, 153, 255);
+  background-color: rgba(255, 255, 255, 0.73);
+
+}
+.dash-light h2{
+  border-left: solid 9px #ffff99;
+  background-color: rgba(255, 255, 255, 0.73);
+
+}
+.dash-hum h2{
+  border-left: solid 9px rgb(158, 126, 151);
+  background-color: rgba(255, 255, 255, 0.73);
+}
+.dash-air h2{
+  border-left: solid 9px rgb(132, 20, 20);
+  background-color: rgba(255, 255, 255, 0.73);
+
+}
+.dash-irrig h2{
+  border-left: solid 9px rgb(74, 214, 123);
+  background-color: rgba(255, 255, 255, 0.73);
+
+}
+.dash-irrig p{
+  font-size: 2em;
+}
+.dash-chart{
+  background-color: rgba(14, 3, 0, 0.4);
+  border-radius: 10px;
+
+}
+.dash-chart legend h1{
+  font-family: 'Montserrat', Calibri, Arial, sans-serif;
+  color: #000;
+  text-transform: uppercase;
+  font-size: 1.3em;
+  text-align: center;
+  margin-top: 0;
+  background-color: rgba(255, 255, 255, 0.73);
+  border-radius: 10px 10px 0 0;
+  padding: 24px 0 24px 35px;
+}
+.dash-chart form {
+  margin-top: 3%;
+}
+select#dataType {
+  background-color: rgba(255, 255, 255, 0.73);
+  height: 70px;
+  padding-left: 51px;
+}
+select#dataType option:checked {
+  background-color: rgba(255, 255, 255, 0.73);
+  text-align: center;
+}
+.chartContainer {
+  margin: 2em;
+  background-color: rgba(255, 255, 255, 0.73);
+  padding: 2%;
+  /* color: wheat; */
+  border-radius: 5px;
+}
+.dash-chart h2{
+  margin-top: 5%;
+  color: #fff;
+  font-size: 2.5em;
+  font-family: 'geosans', Calibri, Arial, sans-serif;
+}
+/*.dash-chart label[for=dataType]{
+color: #fff;
+font-size: 1.5em;
+height: 100px;
+/* margin-top: -2%; */
+/*  overflow: inherit;
+position: relative;
+font-family: 'geosans', Calibri, Arial, sans-serif;
+}*/

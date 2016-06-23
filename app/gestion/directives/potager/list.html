@@ -1,0 +1,19 @@
+
+<ul>
+    <li ng-repeat="potager in gestion.potagers">
+        <h3 ng-click="gestion.selectedPotager(potager)">Potager {{potager.id}}</h3>
+        <button ng-click="gestion.selectedPotager(potager)">Editer</button>
+        <button ng-click="gestion.deletePotager(potager)">Supprimer</button>
+        <p>{{potager.description}}</p>
+        <h4>Place</h4>
+        <ul>
+            <li>Localisation: {{potager.environment.location}}</li>
+            <li>Air: {{potager.environment.temperature_air}}</li>
+            <li>Water: {{potager.environment.temperature_water}}</li>
+            <li>Humidité: {{potager.environment.humidity_air}}</li>
+            <li>Taux de luminosité: {{potager.environment.sunshine_sensor}}</li>
+            <li>Niveau du réservoir: {{potager.environment.reservoir_sensor}}</li>
+            <li>public: {{potager.environment.is_public}}</li>
+        </ul>
+    </li>
+</ul>

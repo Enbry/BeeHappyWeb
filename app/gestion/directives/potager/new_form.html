@@ -1,0 +1,64 @@
+<h1>Nouveau potager</h1>
+
+<form ng-submit="gestion.new('potager', gestion.potager)">
+    <label for="potager.name">Nom</label>
+    <input type="text" id="potager.name" ng-model="gestion.potager.name" ng-value="gestion.potager.name"/>
+    <br>
+    <label for="potager.description">Description</label>
+    <textarea type="text" id="potager.description" ng-model="gestion.potager.description">{{gestion.potager.description}}</textarea>
+    <br>
+    <label>Publique: </label>
+    <label for="potager.pulic.true">Oui</label>
+    <input type="radio" id="potager.pulic.true" ng-model="gestion.potager.isPublic" ng-value="true" ng-checked="gestion.potager.is_public === true"/>
+    <label for="potager.pulic.false">Non</label>
+    <input type="radio" id="potager.pulic.false" ng-model="gestion.potager.isPublic" ng-value="false" ng-checked="gestion.potager.is_public === false"/>
+    <br>
+
+    <label for="potager.address1">Adresse (ligne1)</label>
+    <input type="text" id="potager.address1"
+           ng-model="gestion.potager.address1"
+           ng-value="gestion.potager.address1"
+           ng-keyup="gestion.geocode(gestion.potager.address1, gestion.potager.address2,gestion.potager.city, gestion.potager.zipCode, gestion.potager.country)"
+    />
+    <br>
+    <label for="potager.address2">Adresse (ligne2)</label>
+    <input type="text" id="potager.address2"
+           ng-model="gestion.potager.address2"
+           ng-value="gestion.potager.address2"
+           ng-keyup="gestion.geocode(gestion.potager.address1, gestion.potager.address2,gestion.potager.city, gestion.potager.zipCode, gestion.potager.country)"
+    />
+    <br>
+    <label for="potager.zipCode">Code Postal</label>
+    <input type="text" id="potager.zipCode"
+           ng-model="gestion.potager.zipCode"
+           ng-value="gestion.potager.zipCode"
+           ng-keyup="gestion.geocode(gestion.potager.address1, gestion.potager.address2,gestion.potager.city, gestion.potager.zipCode, gestion.potager.country)"
+    />
+    <br>
+    <label for="potager.city">Ville</label>
+    <input type="text" id="potager.city"
+           ng-model="gestion.potager.city"
+           ng-value="gestion.potager.city"
+           ng-keyup="gestion.geocode(gestion.potager.address1, gestion.potager.address2,gestion.potager.city, gestion.potager.zipCode, gestion.potager.country)"
+    />
+    <br>
+    <label for="potager.country">Pays</label>
+    <input type="text" id="potager.country"
+           ng-model="gestion.potager.country"
+           ng-value="gestion.potager.country"
+           ng-keyup="gestion.geocode(gestion.potager.address1, gestion.potager.address2,gestion.potager.city, gestion.potager.zipCode, gestion.potager.country)"
+    />
+    <br>
+    <label>Afficher la position: </label>
+    <label for="potager.location.true">Oui</label>
+    <input type="radio" id="potager.location.true" ng-model="gestion.potager.showLocation" ng-value="true" />
+    <label for="potager.location.false">Non</label>
+    <input type="radio" id="potager.location.false" ng-model="gestion.potager.showLocation" ng-value="false" checked/>
+    <br>
+
+    <button class="pure-button" type="reset" >Annuler</button>
+    <button class="pure-button" type="submit">Valider</button>
+
+</form>
+
+<leaflet markers="markers" lf-center="center" height="480px" width="100%"></leaflet>

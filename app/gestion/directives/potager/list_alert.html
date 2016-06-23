@@ -1,0 +1,56 @@
+
+<p ng-hide="gestion.alerts.length">No Alert</p>
+<ul>
+    <li ng-repeat="alert in gestion.alerts">
+        <button class="pure-button" ng-click="gestion.display('alert', 'edit', $index)" ng-hide="gestion.editAlerts[$index]">Editer</button>
+
+        <button class="pure-button button-warning"
+                ng-click="gestion.unlink('alert', gestion.potager.slug, alert.slug)"
+        >Dé-associer</button>
+
+        <form name="alertForm{{$index}}" ng-submit="gestion.edit('alert', alert.slug,gestion.alertsCopy[$index] )" ng-show="gestion.editAlerts[$index]">
+                <span>Nom:
+                    <input type="text" name="name" ng-model="gestion.alertsCopy[$index].name" value="{{alert.name}}"/>
+                    <br>
+                    Description:
+                    <textarea name="description" ng-model="gestion.alertsCopy[$index].description">{{alert.description}}</textarea>
+                    <br>
+                    Message:
+                    <input type="text" name="message" ng-model="gestion.alertsCopy[$index].message" value="{{alert.message}}"/>
+                    <br>
+                    <select name="type" ng-model="gestion.alertsCopy[$index].type">
+                        <option
+                                ng-repeat="type in gestion.types"
+                                value="{{type.slug}}"
+                                ng-selected="type.slug == alert.type.slug"
+                        >
+                            {{type.name}}
+                        </option>
+                    </select>
+
+                    <select name="comparison" ng-model="gestion.alertsCopy[$index].comparison">
+                        <option ng-repeat="comparison in gestion.comparisonTable"
+                                value="{{$index+1}}"
+                                ng-selected="$index+1 == alert.comparison"
+                        >{{comparison}}</option>
+                    </select>
+
+                    <input type="number" name="treshold" step="any" ng-model="gestion.alertsCopy[$index].threshold" value="{{alert.threshold}}"/>
+                </span>
+                <span>
+                    <button class="pure-button" type="reset" ng-click="gestion.reset('alert', 'edit', $index)">Annuler</button>
+                    <button class="pure-button" type="submit"> Envoyer </button>
+                </span>
+        </form>
+
+                <span ng-hide="gestion.editAlerts[$index]">
+
+                    <h5>{{alert.name}}</h5>
+                    <p>{{alert.description}}</p>
+                    <p>{{alert.message}}</p>
+
+                    <hr>
+                    {{alert.type.name}} {{gestion.comparisonTable[alert.comparison-1]}} {{alert.threshold}}
+                </span>
+    </li>
+</ul>

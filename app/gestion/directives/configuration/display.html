@@ -1,0 +1,28 @@
+<ul>
+    <li>
+        Nom: {{gestion.configuration.name}}
+    </li>
+    <li>
+        Description: {{gestion.configuration.description}}
+    </li>
+
+
+    <li>
+        Allumage: De {{gestion.getHours(gestion.configuration.lighting_start)}}:{{gestion.getMinutes(gestion.configuration.lighting_start)}}
+                à
+                {{gestion.getHours(gestion.configuration.lighting_end)}}:{{gestion.getMinutes(gestion.configuration.lighting_end)}}
+    </li>
+    <li>
+        Arrosage: <br>
+        Activé: {{gestion.configuration.is_watering_active?"Oui":"Non"}}
+                <br>
+                De
+                {{gestion.getHours(gestion.configuration.watering_start)}}:{{gestion.getMinutes(gestion.configuration.watering_start)}}
+                à
+                {{gestion.getHours(gestion.configuration.watering_end)}}:{{gestion.getMinutes(gestion.configuration.watering_end)}}
+
+    </li>
+    <li>
+        Luminosité: {{gestion.configuration.light_treshold}}%
+    </li>
+</ul>

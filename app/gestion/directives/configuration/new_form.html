@@ -1,0 +1,94 @@
+
+<form ng-submit="gestion.new('configuration', gestion.configurationModel, gestion.potager.slug)">
+    <ul>
+        <li>
+            Nom:
+            <span>
+                <input type="text"
+                       ng-model="gestion.configurationModel.name"
+                >
+            </span>
+        </li>
+        <li>
+            Description:
+            <span>
+                <textarea type="text"
+                          ng-model="gestion.configurationModel.description"
+                >
+                    {{gestion.configurationModel.description}}
+                </textarea>
+            </span>
+        </li>
+
+
+        <li>Allumage:
+            <span>
+                <input type="number" min="0" max="24"
+                       ng-model="gestion.configurationModel.lightingStart.hour"
+                />
+                :
+                <input type="number" min="0" max="60"
+                       ng-model="gestion.configurationModel.lightingStart.minute"
+                />
+                à
+                <input type="number" min="0" max="24"
+                       ng-model="gestion.configurationModel.lightingEnd.hour"
+                />
+                :
+                <input type="number" min="0" max="60"
+                       ng-model="gestion.configurationModel.lightingEnd.minute"
+                />
+            </span>
+        </li>
+        <li>
+            Arrosage:
+            <span>
+
+                <div>
+                    Activer:<br>
+                    Oui:
+                    <input type="radio" name="is_watering_active"
+                           ng-model="gestion.configurationModel.isWateringActive"
+                           ng-value="true"
+                    /> <br>
+                    Non:
+                    <input type="radio" name="is_watering_active"
+                           ng-model="gestion.configurationModel.isWateringActive"
+                           ng-value="false"
+                           checked
+                    />
+                </div>
+
+                De
+                <input type="number" min="0" max="24"
+                       ng-model="gestion.configurationModel.wateringStart.hour"
+                />
+                :
+                <input type="number" min="0" max="60"
+                       ng-model="gestion.configurationModel.wateringStart.minute"
+                />
+                à
+                <input type="number" min="0" max="24"
+                       ng-model="gestion.configurationModel.wateringEnd.hour"
+                />
+                :
+                <input type="number" min="0" max="60"
+                       ng-model="gestion.configurationModel.wateringEnd.minute"
+                />
+            </span>
+
+        </li>
+        <li>
+            Luminosité:
+            <span>
+                <input type="number" step="any" min="0" max="100"
+                       ng-model="gestion.configurationModel.lightTreshold"
+                />%
+            </span>
+        </li>
+    </ul>
+        <span>
+            <button class="pure-button" type="reset" ng-click="gestion.reset('configuration', 'new')">Annuler</button>
+            <button class="pure-button" type="submit"> Envoyer </button>
+        </span>
+</form>

@@ -1,0 +1,27 @@
+<div class="dashboard" ng-init="dashboard.getDatas()">
+  <div class="dash-title">
+    <div class="dashboard-container">
+      <h1 class="text-left">{{ dashboard.title }}</h1>
+    </div>
+  </div>
+    <div class="dashboard-content">
+      <div class="col-md-12">
+        <div class=" dash  animated bounceIn" ng-repeat="potager in dashboard.listePotagers.gardens">
+<div class="dash-content-box hvr-grow-shadow">
+              <div class="dash-img dashSelection"
+                   ng-init="dashboard.addRandImages()"
+                   ng-click="dashboard.selectedPotager(potager)">
+                  <img class="img-responsive" ng-src="{{ potager.imgRand }}" id="dashImage" alt="Urban Potager Picture" />
+                  <h1>{{ potager.name }}</h1>
+
+              </div>
+
+              <div ng-class="dash" ng-click="dashboard.selectedPotager(potager)">
+                  <p ng-bind="potager.description" class="description"></p>
+              </div>
+              <button class="hvr-buzz mui-btn mui-btn--large mui-btn--primary mui-btn--fab" ng-click="dashboard.selectedPotager(potager)"><i class="fa fa-plus"></i></button>
+</div>
+        </div>
+      </div>
+    </div>
+</div>

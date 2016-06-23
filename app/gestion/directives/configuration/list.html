@@ -1,0 +1,26 @@
+
+<div class="config-box  container-fluid alert-container">
+  <div class="alert-title config-title col-md-3 col-sm-3">
+    <h1 class="text-center">Configurations</h1>
+    <img src="assets/images/config.png">
+  </div>
+  <div class="alert-box col-md-9 col-sm-9 no-pad animated bounceIn test" >
+
+    <div class="col-md-4 col-sm-4 no-pad single-alert1" ng-repeat="configuration in gestion.configurations" ng-class="dash" ng-click="gestion.goToPage('configuration', 'select', configuration.slug)">
+      <h1>{{ configuration.name }}</h1>
+      <p ng-bind="configuration.description" class="description" ></p>
+      <button class="btn-edit hvr-buzz mui-btn mui-btn mui-btn--primary mui-btn--fab" ng-click="potager.onEditClick()"><i class="fa fa-pencil"></i></button>
+
+    </div>
+
+
+
+
+  </div>
+
+<div ng-hide="gestion.configurations.length">
+    <p>No Configuration</p>
+    <configurationnewform ng-show="gestion.newConfiguration"></configurationnewform>
+    <button class="pure-button" ng-click="gestion.display('configuration', 'new')" ng-hide="gestion.newConfiguration">Nouvelle configuration</button>
+</div>
+</div>

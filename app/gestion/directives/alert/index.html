@@ -1,0 +1,39 @@
+<div class="dash-title">
+  <div class="dashboard-container">
+    <h1 class="text-left">Gestion</h1>
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3 edit-alert">
+    <h1>Alerte {{gestion.alert.name}}</h1>
+
+
+    <alerteditform ng-show="gestion.editAlert"></alerteditform>
+
+
+    <div class="col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2" ng-hide="gestion.editAlert">
+      <h3>Description</h3>
+      <div class="col-md-6 col-sm-6 col-md-offset-6 col-sm-offset-6">
+      <p>{{gestion.alert.description}}</p>
+    </div>
+
+      <h3>Message</h3>
+      <div class="col-md-6 col-sm-6 col-md-offset-6 col-sm-offset-6">
+
+      <p>{{gestion.alert.message}}</p>
+    </div>
+
+      <h3>Données</h3>
+      <div class="col-md-6 col-sm-6 col-md-offset-6 col-sm-offset-6">
+
+      <p>{{gestion.alert.type.name}} {{gestion.comparisonTable[gestion.alert.comparison-1]}} {{gestion.alert.threshold}}</p>
+    </div>
+    <div class="edit-btn" ng-hide="gestion.editAlert">
+      <button class="btn-edit hvr-buzz mui-btn mui-btn--large mui-btn--primary mui-btn--fab" ng-click="gestion.display('alert', 'edit', 'solo')"><i class="fa fa-pencil fa-2x"></i></button>
+      <button class="btn-delete hvr-buzz mui-btn mui-btn--large mui-btn--primary mui-btn--fab" ng-click="gestion.delete('alert', gestion.alert.slug)"><i class="fa fa-trash fa-2x"></i></button>
+
+
+    </div>
+    </div>
+  </div>
+</div>

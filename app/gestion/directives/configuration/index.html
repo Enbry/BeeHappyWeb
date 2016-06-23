@@ -1,0 +1,65 @@
+
+
+
+
+<div class="dash-title">
+  <div class="dashboard-container">
+    <h1 class="text-left">Gestion</h1>
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3 edit-alert">
+    <h1>Configuration {{gestion.configuration.name}}</h1>
+
+
+
+
+      <div class="col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2" ng-hide="gestion.editAlert">
+        <h3>Nom</h3>
+        <div class="col-md-6 col-sm-6 col-md-offset-6 col-sm-offset-6">
+          <p>{{gestion.configuration.name}}</p>
+        </div>
+
+        <h3>Description</h3>
+        <div class="col-md-6 col-sm-6 col-md-offset-6 col-sm-offset-6">
+
+          <p>{{gestion.configuration.description}}</p>
+        </div>
+
+        <h3>Allumage</h3>
+        <div class="col-md-6 col-sm-6 col-md-offset-6 col-sm-offset-6">
+
+          <p>De {{gestion.getHours(gestion.configuration.lighting_start)}}:{{gestion.getMinutes(gestion.configuration.lighting_start)}}
+            à
+            {{gestion.getHours(gestion.configuration.lighting_end)}}:{{gestion.getMinutes(gestion.configuration.lighting_end)}}</p>
+          </div>
+          <h3>Arrosage</h3>
+
+              <div class="col-md-6 col-sm-6 col-md-offset-6 col-sm-offset-6">
+
+                <p>
+                  Activé: {{gestion.configuration.is_watering_active?"Oui":"Non"}}
+                            <br>
+                  {{gestion.getHours(gestion.configuration.watering_start)}}:{{gestion.getMinutes(gestion.configuration.watering_start)}}</p>
+                </div></p>
+
+
+                <h3>Luminosité</h3>
+                  <div class="col-md-6 col-sm-6 col-md-offset-6 col-sm-offset-6">
+
+                    <p>
+
+                      {{gestion.configuration.light_treshold}}%</p>
+                  </div></p>
+                </div>
+                <configurationeditform ng-show="gestion.editConfiguration"></configurationeditform>
+<div ng-hide="gestion.editConfiguration">
+                <div class="edit-btn">
+                  <button class="btn-edit hvr-buzz mui-btn mui-btn--large mui-btn--primary mui-btn--fab" ng-click="gestion.display('configuration', 'edit')" ng-hide="gestion.editConfiguration"><i class="fa fa-pencil fa-2x"></i></button>
+                  <button class="btn-delete hvr-buzz mui-btn mui-btn--large mui-btn--primary mui-btn--fab" ng-click="gestion.delete('configuration', gestion.configuration.slug)" ng-hide="gestion.editConfiguration"><i class="fa fa-trash fa-2x"></i></button>
+
+
+                </div>
+              </div>
+            </div>
+          </div>

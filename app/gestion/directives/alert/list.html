@@ -1,0 +1,26 @@
+<div class="dash-title">
+  <div class="dashboard-container">
+    <h1 class="text-left">Gestion</h1>
+  </div>
+</div>
+<div class="container-fluid alert-container">
+  <div class="alert-title col-md-3 col-sm-3">
+    <h1 class="text-center">Alertes</h1>
+    <img src="assets/images/alert.png">
+  </div>
+  <div class="alert-box col-md-9 col-sm-9 no-pad animated bounceIn test" ng-repeat="alert in gestion.alerts">
+    <div class="col-md-4 col-sm-4 no-pad single-alert" ng-class="dash" ng-click="gestion.goToPage('alert', 'select', alert.slug)">
+      <h1>{{ alert.name }}</h1>
+      <p ng-bind="alert.description" class="description"></p>
+      <button class="btn-edit hvr-buzz mui-btn mui-btn mui-btn--primary mui-btn--fab" ng-click="potager.onEditClick()"><i class="fa fa-pencil-square-o"></i></button>
+
+    </div>
+
+    </div>
+  </div>
+  <div ng-hide="gestion.alerts.length">
+    <p>No Alert</p>
+    <alertnewform ng-show="gestion.newAlert"></alertnewform>
+    <button class="pure-button" ng-click="gestion.display('alert', 'new')" ng-hide="gestion.newAlert">Nouvelle alerte</button>
+  </div>
+</div>

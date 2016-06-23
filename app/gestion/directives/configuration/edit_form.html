@@ -1,0 +1,104 @@
+<div class="col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2">
+  <form class="edit-form-config" ng-submit="gestion.edit('configuration', gestion.configuration.slug, gestion.configurationCopy)">
+
+    <legend>Nom</legend>
+    <div class="mui-textfield  mui-textfield--float-label">
+      <input type="text"
+      ng-value="gestion.configuration.name"
+      ng-model="gestion.configurationCopy.name"
+      >
+    </div>
+    <div class="mui-textfield  mui-textfield--float-label">
+      <legend>Description</legend>
+      <textarea type="text"
+      ng-model="gestion.configurationCopy.description"
+      >
+      {{gestion.configuration.description}}
+    </textarea>
+  </div>
+  <div class="mui-textfield  mui-textfield--float-label">
+    <legend>Allumage</legend>
+
+    <input class="input-nb" type="number" min="0" max="24"
+    ng-value="gestion.getHours(gestion.configuration.lighting_start)"
+    ng-model="gestion.configurationCopy.lightingStart.hour"
+    />
+    :
+    <input class="input-nb" type="number" min="0" max="60"
+    ng-value="gestion.getMinutes(gestion.configuration.lighting_start)"
+    ng-model="gestion.configurationCopy.lightingStart.minute"
+    />
+    à
+
+    <input class="input-nb" type="number" min="0" max="24"
+    ng-value="gestion.getHours(gestion.configuration.lighting_end)"
+    ng-model="gestion.configurationCopy.lightingEnd.hour"
+    />
+    :
+    <input  class="input-nb" type="number" min="0" max="60"
+    ng-value="gestion.getMinutes(gestion.configuration.lighting_end)"
+    ng-model="gestion.configurationCopy.lightingEnd.minute"
+    />
+  </div>
+  <legend>Arrosage</legend>
+
+
+  <div>
+    Activé:<br>
+    <div class="mui-radio">
+      <label>
+        <input type="radio"
+        name="is_watering_active"
+        ng-model="gestion.configurationCopy.isWateringActive"
+        ng-value="true"
+        ng-checked="gestion.configuration.is_watering_active"
+        >
+        Oui
+      </label>
+    </div>
+    <div class="mui-radio">
+      <label>
+        <input type="radio"
+        name="is_watering_active"
+        ng-model="gestion.configurationCopy.isWateringActive"
+        ng-value="false"
+        ng-checked="!gestion.configuration.is_watering_active">
+        Non
+      </label>
+    </div>
+
+  </div>
+  <div class="mui-textfield  mui-textfield--float-label">
+
+    <input class="input-nb" type="number" min="0" max="24"
+    ng-value="gestion.getHours(gestion.configuration.watering_start)"
+    ng-model="gestion.configurationCopy.wateringStart.hour"
+    />
+    :
+    <input class="input-nb" type="number" min="0" max="60"
+    ng-value="gestion.getMinutes(gestion.configuration.watering_start)"
+    ng-model="gestion.configurationCopy.wateringStart.minute"
+    />
+    à
+    <input class="input-nb" type="number" min="0" max="24"
+    ng-value="gestion.getHours(gestion.configuration.watering_end)"
+    ng-model="gestion.configurationCopy.wateringEnd.hour"
+    />
+    :
+    <input class="input-nb" type="number" min="0" max="60"
+    ng-value="gestion.getMinutes(gestion.configuration.watering_end)"
+    ng-model="gestion.configurationCopy.wateringEnd.minute"
+    />
+  </div>
+  <div class="mui-textfield  mui-textfield--float-label">
+    <legend>Luminosité</legend>
+
+    <input class="input-nb" type="number" step="any" min="0" max="100" ng-value="gestion.configuration.light_treshold" ng-model="gestion.configurationCopy.lightTreshold"/>%
+  </div>
+  <div class="edit-btn">
+    <button type="reset" ng-click="gestion.reset('configuration', 'edit')" class="btn-edit hvr-sweep-to-right mui-btn mui-btn mui-btn--primary mui-btn--fab" ><i class="fa fa-check"></i></button>
+    <button type="submit" class="btn-reset hvr-buzz mui-btn mui-btn mui-btn--primary mui-btn--fab"><i class="fa fa-angle-double-left"></i></button>
+  </div>
+
+</form>
+</div>

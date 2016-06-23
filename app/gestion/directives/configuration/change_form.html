@@ -1,0 +1,11 @@
+
+<form novalidate >
+    <select name="configurationSlug" ng-model="configuration.slug" >
+        <option ng-repeat="configuration in gestion.configurations" ng-value="configuration.slug" ng-selected="gestion.configuration.slug === configuration.slug">
+            {{configuration.name}}
+        </option>
+    </select>
+
+    <button type="reset" class="pure-button" ng-click="gestion.reset('configuration', 'change')">Annuler</button>
+    <button type="submit" class="pure-button" ng-click="gestion.change('configuration', gestion.potager.slug, configuration.slug)">Valider</button>
+</form>

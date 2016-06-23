@@ -1,0 +1,62 @@
+<div class="col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2 edit-potager">
+  <div class="col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2">
+
+
+<h3 >Potager {{gestion.potager.name}}</h3>
+
+<button ng-click="gestion.delete('potager', gestion.potager.slug)">Supprimer</button>
+
+
+<h4>Potager</h4>
+
+<div class="action-button-container">
+    <button class="pure-button" ng-click="gestion.display('potager', 'edit')" ng-hide="gestion.editPotager">Editer</button>
+</div>
+
+<potagerdisplay ng-hide="gestion.editPotager"></potagerdisplay>
+
+<potagereditform ng-show="gestion.editPotager"></potagereditform>
+
+
+
+<h4>Configuration</h4>
+
+<div class="action-button-container">
+    <button class="pure-button" ng-click="gestion.display('configuration', 'new')" ng-if="!gestion.configuration">Créer une configuration</button>
+    <button class="pure-button" ng-click="gestion.display('configuration', 'edit')" ng-hide="gestion.editConfiguration" ng-if="gestion.configuration">Editer</button>
+    <button class="pure-button" ng-click="gestion.display('configuration', 'change')" ng-if="gestion.configurations.length">Changer pour une autre configuration existante</button>
+    <button class="pure-button" ng-click="gestion.unlink('configuration', gestion.potager.slug)" ng-show="gestion.configuration">Dé-associer</button>
+</div>
+
+
+<p ng-hide="gestion.changeConfiguration||gestion.newConfiguration||gestion.configuration">No configuration</p>
+
+<configurationdisplay ng-hide="gestion.changeConfiguration||gestion.newConfiguration||gestion.editConfiguration||!gestion.configuration"></configurationdisplay>
+
+<configurationchangeform ng-show="gestion.changeConfiguration"></configurationchangeform>
+
+<configurationnewform ng-if="!gestion.configuration" ng-show="gestion.newConfiguration"></configurationnewform>
+
+<configurationeditform ng-if="gestion.configuration" ng-show="gestion.editConfiguration"></configurationeditform>
+
+
+
+
+<h4>Alertes</h4>
+<div>
+    <potagerlistalert></potagerlistalert>
+
+
+        <alertnewForm ng-show="gestion.newAlert"></alertnewForm>
+
+        <alertchangeform ng-show="gestion.changeAlert"></alertchangeform>
+
+        <div  ng-hide="gestion.newAlert||gestion.changeAlert">
+            <button class="pure-button" ng-click="gestion.display('alert', 'new')">Créer une alerte</button>
+            <button class="pure-button" ng-click="gestion.display('alert', 'change')">Associer une alerte existante</button>
+        </div>
+</div>
+
+<button class="pure-button" ng-click="gestion.goBack()">Retours</button>
+</div>
+</div>

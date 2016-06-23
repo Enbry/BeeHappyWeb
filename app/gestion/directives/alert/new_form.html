@@ -1,0 +1,27 @@
+
+<form ng-submit="gestion.new('alert', gestion.alertModel, gestion.potager.slug)">
+    <label for="nameAlertNew">Nom</label>
+    <input id="nameAlertNew" type="text" ng-model="gestion.alertModel.name" placeholder="Nom de l'alerte"/>
+    <br>
+    <label for="descriptionAlertNew">Description</label>
+    <textarea id="descriptionAlertNew" ng-model="gestion.alertModel.description" placeholder="description de l'alerte"></textarea>
+    <br>
+    <label for="messageAlertNew">Message</label>
+    <input id="messageAlertNew" type="text" ng-model="gestion.alertModel.message" placeholder="Message à afficher"/>
+    <br>
+    <label for="typesAlertNew">Types</label>
+    <select id="typesAlertNew" ng-model="gestion.alertModel.type">
+        <option ng-repeat="type in gestion.types" value="{{type.slug}}">{{type.name}}</option>
+    </select>
+    <br>
+    <label for="comparisonAlertNew">Comparaison</label>
+    <select id="comparisonAlertNew" ng-model="gestion.alertModel.comparison">
+        <option ng-repeat="comparison in gestion.comparisonTable" value="{{$index+1}}">{{comparison}}</option>
+    </select>
+    <br>
+    <label for="tresholdAlertNew">Seuil</label>
+    <input id="tresholdAlertNew" type="number" step="any" ng-model="gestion.alertModel.threshold" placeholder="seuil voulu"/>
+    <br>
+    <button class="pure-button" type="reset" ng-click="gestion.reset('alert','new')">Annuler</button>
+    <button class="pure-button" type="submit">Ajouter</button>
+</form>

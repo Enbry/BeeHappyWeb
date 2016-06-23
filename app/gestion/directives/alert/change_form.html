@@ -1,0 +1,10 @@
+
+<form novalidate>
+    <select ng-model="gestion.changeAlertValue">
+        <option ng-repeat="alert in gestion.userAlerts" ng-value="alert.slug">{{alert.name}}</option>
+    </select>
+    <button class="pure-button" type="reset" ng-click="gestion.reset('alert','change')">Annuler</button>
+    <button class="pure-button" type="submit"
+            ng-click="gestion.change('alert', gestion.potager.slug, gestion.changeAlertValue )"
+    >Associer</button>
+</form>

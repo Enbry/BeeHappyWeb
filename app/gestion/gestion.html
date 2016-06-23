@@ -1,0 +1,12 @@
+<!--<h1>{{ gestion.title }}</h1>-->
+
+<potager ng-if="gestion.page === 'potager'"></potager>
+
+
+<configuration ng-if="gestion.page === 'configuration'"></configuration>
+
+<alert ng-if="gestion.page === 'alert'"></alert>
+
+<potagernewform ng-if="gestion.page === 'newPotager'"></potagernewform>
+
+<index ng-if="gestion.page === 'index'"></index>
