@@ -1,53 +1,116 @@
 <!-- Home Slider -->
 <div class="home-slider">
-
   <div id="carousel" class="carousel slide carousel-fade" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carousel" data-slide-to="0" class="active"></li>
-                <li data-target="#carousel" data-slide-to="1"></li>
-                <li data-target="#carousel" data-slide-to="2"></li>
-
-            </ol>
-
-            <div class="carousel-inner">
-              <div class="item active slide1">
-                <div class="carousel-caption">
-                </div>
-              </div>
-              <div class="item slide2">
-                <div class="carousel-caption">
-                </div>
-              </div>
-              <div class="item slide3">
-                <div class="carousel-caption">
-                </div>
-              </div>
-            </div>
-
-
+    <ol class="carousel-indicators">
+      <li data-target="#carousel" data-slide-to="0" class="active"></li>
+      <li data-target="#carousel" data-slide-to="1"></li>
+      <li data-target="#carousel" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="item active slide1">
+        <div class="carousel-caption">
+        </div>
       </div>
-
-
+      <div class="item slide2">
+        <div class="carousel-caption">
+        </div>
+      </div>
+      <div class="item slide3">
+        <div class="carousel-caption">
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+
 <div class="container-fluid home-intro">
-</div>
-<div class="container-fluid home-features">
-</div>
-<div class="container-fluid home-map">
   <div class="container">
     <div class="row">
-      <div class="col-lg-6">
+      <div class="col-lg-12 col-md-12 col-sm-12 home-title">
+        <img src="assets/images/home-main-ic.svg" class="img-responsive home-main-ic">
+        <h1 class="text-center">Présentation</h1>
       </div>
-      <div class="col-lg-6">
+    </div>
+    <div class="row">
+      <div class="col-lg-4 col-md-4 col-sm-4">
+        <img src="assets/images/home-ic.svg" class="img-responsive center-block home-ic">
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-4">
+        <img src="assets/images/home-ic1.svg" class="img-responsive center-block home-ic">
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-4">
+        <img src="assets/images/home-ic2.svg" class="img-responsive center-block home-ic">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-4 col-md-4 col-sm-4">
+        <h3 class="text-center">Sed ut perspiciatis unde omnis iste natus error</h3>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-4">
+        <h3 class="text-center">Sed ut perspiciatis unde omnis iste natus error</h3>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-4">
+        <h3 class="text-center">Sed ut perspiciatis unde omnis iste natus error</h3>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid home-features">
+</div>
+
+<div class="container-fluid home-map">
+  <div class="container">
+    <div class="row map-container">
+      <div class="col-lg-6 col-md-6 col-sm-6 map-desc">
+        <img src="assets/images/home-main-ic.svg" class="img-responsive home-main-ic">
+        <h1 class="text-center">Ruches connectées</h1>
+        <h3 class="text-center">Excogitatum est super his, ut homines quidam ignoti, vilitate ipsa parum cavendi ad colligendos rumores per Antiochiae latera cuncta destinarentur relaturi quae audirent. hi peragranter et dissimulanter honoratorum circulis adsistendo pervadendoque divites domus egentium habitu quicquid noscere poterant vel audire latenter intromissi per posticas in regiam </h3>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-6 map-content">
         <leaflet markers="markers" maxbounds="maxbounds" defaults="defaults" height="480px" width="100%"></leaflet>
       </div>
     </div>
   </div>
-
 </div>
+
 <div class="container-fluid home-mobile">
+  <div class="container">
+    <div class="col-lg-6 col-md-6 col-sm-6">
+      <div class="home-slider">
+        <div id="carousel-mob" class="carousel slide carousel-fade" data-ride="carousel">
+          <ol class="carousel-indicators mobile-ctrl">
+            <li data-target="#carousel-mob" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-mob" data-slide-to="1"></li>
+            <li data-target="#carousel-mob" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="item active slide1-mob">
+              <div class="carousel-caption">
+              </div>
+            </div>
+            <div class="item slide2-mob">
+              <div class="carousel-caption">
+              </div>
+            </div>
+            <div class="item slide3-mob">
+              <div class="carousel-caption">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- http://jsfiddle.net/6SQhb/7/ -->
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6">
+      <img src="assets/images/home-main-ic.svg" class="img-responsive home-main-ic-mob">
+      <h1 class="text-center">Appli mobile</h1>
+      <h3 class="text-center">Excogitatum est super his, ut homines quidam ignoti, vilitate ipsa parum cavendi ad colligendos rumores per Antiochiae latera cuncta destinarentur relaturi quae audirent. hi peragranter et dissimulanter honoratorum circulis adsistendo pervadendoque divites domus egentium habitu quicquid noscere poterant vel audire latenter intromissi per posticas in regiam </h3>
+
+    </div>
+  </div>
+
 </div>
-<!-- Display Map -->
 
 
-        <button type="button" ng-click="home.login()" class="btn-default btn-lg home-btn center-block">{{home.button}}</button>
+<button type="button" ng-click="home.login()" class="btn-default btn-lg home-btn center-block">{{home.button}}</button>

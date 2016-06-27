@@ -32,6 +32,21 @@ h1, h2{
 .slide3 {
   background-color: #00a6dd;
 }
+.slide1-mob {
+  background: url(images/mobile-home.png) no-repeat;
+  background-position: 50%;
+      background-size: 70%;
+}
+.slide2-mob {
+  background: url(images/mobile-login.png) no-repeat;
+  background-position: 50%;
+      background-size: 70%;
+}
+.slide3-mob {
+  background: url(images/mobile-menu.png) no-repeat;
+  background-position: 50%;
+      background-size: 70%;
+}
 .carousel-indicators{
   left: 50%;
 }
@@ -56,14 +71,35 @@ h1, h2{
 .carousel-control{
   width: 5%;
 }
-
-
-
-
 .carousel .item {
   min-height: 350px;
   height: 100vh;
   width:100vw;
+}
+.home-mobile .item{
+  width: auto;
+  height: 500px;
+}
+.mobile-ctrl{
+bottom: 0;
+}
+.mobile-ctrl .active{
+  width: 12px;
+  height: 12px;
+  margin: 0;
+  background-color: #000;
+}
+.mobile-ctrl li {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin: 0;
+    text-indent: -999px;
+    cursor: pointer;
+    background-color: #000 \9;
+    background-color: rgba(0,0,0,0.52);
+    border: 1px solid #fff;
+    border-radius: 10px;
 }
 .deepskyblue .carousel-caption {
   position: absolute;
@@ -131,80 +167,102 @@ h1, h2{
   animation-delay: 2.5s;
 }
 
-
-
-
-
-.concept-container{
-  background: url('images/home-concept-bg.png') no-repeat;
-  background-size: cover;
-  padding: 2% 0;
-  color: #fff;
-  position: relative;
+/* Presentation */
+.home-intro{
+  background-color: #fff8ee;
 }
-.concept-container:before{
-  background-color: rgba(34,34,34, 0.75);
+.home-intro h1{
+  font-family: 'lemonmilk', Calibri, Arial, sans-serif;
+  font-size: 3em;
+}
+.home-main-ic{
+  width: 10%;
   position: absolute;
-  left: 0;
+  left: 28%;
   top: 0;
-  width: 100%;
-  height: 100%;
-  display: block;
-  content: '';
 }
-.concept-content{
+.home-title{
+  position: relative;
+  padding: 5% 0;
+}
+.home-ic{
+  width: 40%;
+}
+.home-intro h3{
+  font-family: 'geosans', Calibri, Arial, sans-serif;
+  font-size: 1.8em;
+}
+.home-intro .container {
+  padding: 2% 0px 4% 0;
+}
+
+.home-feature{
+  /*margin: 5% 0;*/
+}
+.home-map{
+  background: url('images/home-map-bg.jpg') no-repeat;
+  background-size: cover;
+}
+.map-container{
+  padding: 10% 0;
+}
+.map-desc{
+  background-color: #fff8ee;
+}
+.home-map h1{
+  font-family: 'lemonmilk', Calibri, Arial, sans-serif;
+  padding: 5% 0;
+}
+.home-map .home-main-ic{
+  position: absolute;
+  left: 12%;
+  top: 4%;
+}
+.map-desc, .map-content{
+  padding: 0;
+}
+.map-desc {
+  height: 480px;
   position: relative;
 }
-.concept-content h1{
-font-family: 'geosans', Arial, sans-serif;
-}
-.feature-cont h1{
-  font-family: 'geosans', Arial, sans-serif;
-
-}
-.feature-bg{
-  background: url('images/fond.png') no-repeat;
-  background-color: white;
-  padding-bottom: 2%;
-}
-
-.concept-container p{
-  font-size: 1.5em;
-  text-align: center;
-  margin: 10% 0 5% 0;
-  line-height: 2.5;
-  color: #fff;
-}
-.home-feature{
-    /*margin: 5% 0;*/
-}
-.img-container{
-  background-color: #E6E0E0;
-  padding: 0;
-  margin-bottom: 2%;
-  margin-top: 2%;
-  transition: all .2s ease-in-out;
-  box-shadow: 4px 4px 4px rgba(138, 129, 129, 0.33);
-}
-.img-container:hover{
-  opacity:0.8;
-  transform: scale(1.1);
-}
-.home-img-content{
-  padding-left: 0;
-}
-
-
-.home-desc{
-  line-height: 1.5;
+.map-desc h3{
   position: absolute;
   top: 50%;
-  right: 0;
   transform: translateY(-50%);
-  padding-right: 5%;
+  font-family: 'geosans', Calibri, Arial, sans-serif;
+  font-size: 1.6em;
+  padding: 0 10%;
+
 }
-.home-desc h2::first-line{
-  color: #57b157;
+.home-mobile{
+  background-color: #fff8ee;
+  padding: 2% 0 4% 0;
+}
+.home-mobile h1{
+  font-family: 'lemonmilk', Calibri, Arial, sans-serif;
+  font-size: 3em;
+  color: #e34017;
+  padding: 10% 0;
+}
+.home-mobile h3{
+  font-family: 'geosans', Calibri, Arial, sans-serif;
+  font-size: 1.6em;
+  padding: 0 10%;
+}
+.home-main-ic-mob{
+  width: 17%;
+  position: absolute;
+  left: 11%;
+  top: 3%;
+}
+.slideOne {
+  background-color:#99CCFF;
+}
+.slideTwo {
+  background-color:#FF66FF;
+}
+.slideThree {
+  background-color:#00CC99;
 }
 .home-btn{
   background: #00b06c;
@@ -214,25 +272,18 @@ font-family: 'geosans', Arial, sans-serif;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
   margin-top: 3%;
-
 }
 .home-btn:hover{
   border: solid 1px rgba(0, 0, 0, 0.41);
 }
 @media (min-width: 992px) and (max-width: 1200px){
-  .home-desc{
-    font-size: 11px;
-  }
+
 }
 
 @media (min-width: 768px) and (max-width: 992px){
-  .home-desc{
-    font-size: 16px;
-  }
+
 }
 
 @media (max-width: 768px){
-  .home-desc{
-    font-size: 15px;
-  }
+
 }
