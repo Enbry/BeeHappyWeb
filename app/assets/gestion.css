@@ -1,44 +1,5 @@
-.alert-container{
-  background-color: rgba(14, 3, 0, 0.4);
-  padding: 0;
-  border-radius: 10px;
-  width: 70%;
-  margin: 0 auto;
-}
-.alert-title{
-  font-size: 2em;
-  background-color: white;
-  height: 500px;
-  border-radius: 10px 0 0 10px;
-  border-right: solid 8px #942b03;
-  font-family: 'Montserrat', Calibri, Arial, sans-serif;
-}
-.alert-box{
-  color: #000;
-}
-.config-box{
-  margin-top: 2%;
-}
-.alert-box h1{
-  font-family: 'geosans', Calibri, Arial, sans-serif;
-  text-align: center;
-  text-transform: capitalize;
-  color: #fff;
-  word-break: break-word;
-}
-.config-title{
-  border-right: solid 8px rgba(39, 154, 253, 0.88);
-}
-.alert-title img {
-  margin: 20% auto;
-  display: table;
-}
-.alert-title h1 {
-  font-family: 'geosans';
-  text-transform: uppercase;
-  font-size: 1em;
-  margin-top: 6%;
-}
+
+
 .alert-title h1:after{
   content: ' ';
   display: block;
@@ -52,131 +13,103 @@
   background: -ms-linear-gradient(left, rgba(147,184,189,0) 0%,rgba(147,184,189,0.8) 20%,rgba(147,184,189,1) 53%,rgba(147,184,189,0.8) 79%,rgba(147,184,189,0) 100%);
   background: linear-gradient(left, rgba(147,184,189,0) 0%,rgba(147,184,189,0.8) 20%,rgba(147,184,189,1) 53%,rgba(147,184,189,0.8) 79%,rgba(147,184,189,0) 100%);
 }
-.alert-box p{
-
-  font-size: smaller;
-  padding: 3% 7%;
-
+.edit-alert {
+  color: #fff;
 }
-.alert-box button{
-  position: absolute;
-  bottom: 3%;
-  right: 3%;
-
+.edit-alert h1{
+  font-family: 'caviar_dreams', Calibri, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+  display: inline-block;
+}
+.edit-alert h3, .edit-alert p{
+  -webkit-margin-before: 0em;
+  -webkit-margin-after: 0em;
 }
 .no-pad{
   padding: 0;
 }
-.single-alert{
-  background-color:rgba(103, 90, 90, 0.18);
-  height: 200px;
-}
-.single-alert1{
-  background-color:rgba(150, 148, 148, 0.34);
-  height: 250px;
-}
-.single-alert2{
-  background-color: rgba(250, 235, 215, 0.34);
-  border-radius: 0 10px 0 0;
-  height: 250px;
-}
-.single-alert3{
-  background-color: rgba(248, 250, 215, 0.25);
-  height: 250px;
-}
-.single-alert4{
-  background-color: rgba(215, 250, 226, 0.28);
-  height: 250px;
-}
-.single-alert5{
-  background-color: rgba(216, 215, 250, 0.37);
-  border-radius: 0 0 10px 0;
-  height: 250px;
-}
-.edit-alert{
-  background-color: rgba(14, 3, 0, 0.4);
-  padding: 0;
-  border-radius: 10px;
-}
-.edit-alert h1{
-  color: #000;
-  text-align: center;
-  font-family: 'Montserrat', Arial, sans-serif;
-  text-transform: uppercase;
-  padding: 2% 0;
-  /* width: 50%; */
-  margin: 0% auto;
-  font-size: 2em;
-  background-color: rgba(255, 255, 255, 0.73);
-  border-radius: 10px 10px 0 0;
-  border-bottom: solid 8px #942b03;
+.gestion-btn{
 
+  display: inline-block;
+  float: right;
+  margin: 0.5% 2%;
 }
-.fa{
-  vertical-align: sub;
+
+.edit-btn-alert {
+  background-color: #ffe976!important;
+  position: absolute!important;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
 }
-.edit-btn{
-  width: 35%;
-margin: 20% auto 11% auto;
-}
-.edit-btn button{
-  margin: 0 4%;
+.edit-btn-alert:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #ffc376;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: 0 50%;
+  transform-origin: 0 50%;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
 }
 .btn-delete{
-  background-color:#f9802b;
+  background-color:#da6060!important;
 }
-.btn-edit{
-  background-color:
+
+.btn-delete:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #d60000;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: 0 50%;
+  transform-origin: 0 50%;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
 }
-.edit-alert h3{
-  text-transform: uppercase;
-color: #fff;
-font-family: 'geosans', Arial, sans-serif;
--webkit-text-stroke-width: 1px;
--webkit-text-stroke-color: white;
-font-size: 1.5em;
+.alert-box{
+  margin: 3px 0;
+  padding: 15px;
+  background-color: rgba(27, 24, 4, 0.66)!important;
+
 }
-.edit-alert p{
-  color: #fff;
-  font-family: 'geosans', Arial, sans-serif;
-  text-align: right;
-  font-size: 1.2em;
-}
-.edit-alert h3:after{
-  content: ' ';
-  display: block;
-  width: 100%;
-  height: 2px;
-  margin-top: 10px;
-  background: -moz-linear-gradient(left, rgba(147,184,189,0) 0%, rgba(147,184,189,0.8) 20%, rgba(147,184,189,1) 53%, rgba(147,184,189,0.8) 79%, rgba(147,184,189,0) 100%);
-  background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(147,184,189,0)), color-stop(20%,rgba(147,184,189,0.8)), color-stop(53%,rgba(147,184,189,1)), color-stop(79%,rgba(147,184,189,0.8)), color-stop(100%,rgba(147,184,189,0)));
-  background: -webkit-linear-gradient(left, rgba(147,184,189,0) 0%,rgba(147,184,189,0.8) 20%,rgba(147,184,189,1) 53%,rgba(147,184,189,0.8) 79%,rgba(147,184,189,0) 100%);
-  background: -o-linear-gradient(left, rgba(147,184,189,0) 0%,rgba(147,184,189,0.8) 20%,rgba(147,184,189,1) 53%,rgba(147,184,189,0.8) 79%,rgba(147,184,189,0) 100%);
-  background: -ms-linear-gradient(left, rgba(147,184,189,0) 0%,rgba(147,184,189,0.8) 20%,rgba(147,184,189,1) 53%,rgba(147,184,189,0.8) 79%,rgba(147,184,189,0) 100%);
-  background: linear-gradient(left, rgba(147,184,189,0) 0%,rgba(147,184,189,0.8) 20%,rgba(147,184,189,1) 53%,rgba(147,184,189,0.8) 79%,rgba(147,184,189,0) 100%);
-}
- .mui-textfield>.input-nb{
-   width: 10%;
-   display: inline-block;
+
+
+.mui-textfield>.input-nb{
+  width: 10%;
+  display: inline-block;
 }
 .mui-textfield>.input-nb,  .mui-textfield>textarea{
 
 }
-.edit-form-config{
-  color: #fff;
-  font-family:  'geosans', Arial, sans-serif;
-}
-.edit-form-config legend, .edit-form-config textarea
-{
-  color: #fff;
-}
+
 .mui-textfield>input{
   color: #fff;
   border-bottom: solid 1px rgba(147,184,189,1);
 
 }
 .btn-reset{
-      background-color: #f4395c;
+  background-color: #f4395c;
 }
 .edit-potager{
   background-color: rgba(14, 3, 0, 0.4);
