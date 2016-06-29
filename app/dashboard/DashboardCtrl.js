@@ -9,7 +9,7 @@
         }
         else {
             var vm = this;
-            vm.title = "MES POTAGERS";
+            vm.title = "Mes Ruches";
           vm.dash = undefined;
 
             /**
@@ -22,7 +22,7 @@
                 });
             };
 
-      
+
             /**
              * Gestion des images aléatoires des dash
              */

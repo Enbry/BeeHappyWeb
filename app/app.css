@@ -21,23 +21,63 @@
   font-style: normal;
 }
 @font-face {
-    font-family: 'lemonmilk';
-    src: url('assets/fonts/lemonmilk-webfont.eot');
-    src: url('assets/fonts/lemonmilk-webfont.eot?#iefix') format('embedded-opentype'),
-         url('assets/fonts/lemonmilk-webfont.woff2') format('woff2'),
-         url('assets/fonts/lemonmilk-webfont.woff') format('woff'),
-         url('assets/fonts/lemonmilk-webfont.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'lemonmilk';
+  src: url('assets/fonts/lemonmilk-webfont.eot');
+  src: url('assets/fonts/lemonmilk-webfont.eot?#iefix') format('embedded-opentype'),
+  url('assets/fonts/lemonmilk-webfont.woff2') format('woff2'),
+  url('assets/fonts/lemonmilk-webfont.woff') format('woff'),
+  url('assets/fonts/lemonmilk-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 
 }
+
+
+@font-face {
+    font-family: 'caviar_dreams';
+    src: url('assets/fonts/caviardreams-webfont.eot');
+    src: url('assets/fonts/caviardreams-webfont.eot?#iefix') format('embedded-opentype'),
+         url('assets/fonts/caviardreams-webfont.woff2') format('woff2'),
+         url('assets/fonts/caviardreams-webfont.woff') format('woff'),
+         url('assets/fonts/caviardreams-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'caviar_dreams';
+    src: url('assets/fonts/caviardreams_italic-webfont.eot');
+    src: url('assets/fonts/caviardreams_italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('assets/fonts/caviardreams_italic-webfont.woff2') format('woff2'),
+         url('assets/fonts/caviardreams_italic-webfont.woff') format('woff'),
+         url('assets/fonts/caviardreams_italic-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'caviar_dreams';
+    src: url('assets/fonts/caviardreams_bold-webfont.eot');
+    src: url('assets/fonts/caviardreams_bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('assets/fonts/caviardreams_bold-webfont.woff2') format('woff2'),
+         url('assets/fonts/caviardreams_bold-webfont.woff') format('woff'),
+         url('assets/fonts/caviardreams_bold-webfont.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'caviar_dreams';
+    src: url('assets/fonts/caviardreams_bolditalic-webfont.eot');
+    src: url('assets/fonts/caviardreams_bolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('assets/fonts/caviardreams_bolditalic-webfont.woff2') format('woff2'),
+         url('assets/fonts/caviardreams_bolditalic-webfont.woff') format('woff'),
+         url('assets/fonts/caviardreams_bolditalic-webfont.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+
+}
+
+
 body{
-  background-color: #fcfcfc;
-  background: url("assets/images/fond2.png");
-  background-position: bottom;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-color: #443c3c;
 }
 
 * {
@@ -47,12 +87,13 @@ body{
 }
 
 .menu{
-  position: absolute;
   overflow: visible;
   height: 80px;
   width: 100vw;
   padding: 0 8px;
-  z-index: 8;;
+  z-index: 8;
+  position: relative;
+  background-color: #000;
 }
 .menu .logo{
   height: 100%;
@@ -60,12 +101,12 @@ body{
   float: left;
 }
 .menu .logo img{
-  height: 80px;
+  height: 65px;
 }
 .menu ul{
   position: absolute;
   right: 16px;
-  bottom: 5px;
+  bottom: 21px;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -79,7 +120,7 @@ body{
 }
 .menu ul > li > a {
   text-decoration: none;
-  color: #000;
+  color: #fff;
   transition: color 0.2s;
   font-family: 'geosans';
 }

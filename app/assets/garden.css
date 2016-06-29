@@ -1,20 +1,24 @@
 
-.dash-title{
-  background-color: #292323;
-  color: #fff;
-  height: 125px;
-  margin-bottom: 2%;
-  border-bottom: solid 3px #4aff7b;
-}
+
 .dash-title h1{
   font-family: 'geosans', Calibri, Arial, sans-serif;
-  font-size: 4.5em;
-  /* margin-top: 0; */
-  /* padding-top: 0; */
-  /* vertical-align: top; */
-  display: table-cell;
-padding: 11% 0;
-    text-transform: uppercase;
+  font-size: 3em;
+  text-transform: uppercase;
+  position: absolute;
+  bottom: 0%;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+}
+.dash-button{
+  position: absolute!important;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #ff7826!important;
+}
+.dash-detail-title {
+  font-weight: bold;
+  text-transform: capitalize;
 }
 .dashboard-box{
   height: 200px;
@@ -24,9 +28,33 @@ padding: 11% 0;
   border-radius: 10px;
 
 }
-.dahs-details{
-    margin-bottom: 2%;
+.dash-list{
+  border-radius: 0!important;
+  margin: 8.5rem 0 1rem 0!important;
+  border: none!important;
+
 }
+.dash-list-item{
+  background-color: rgba(27, 24, 4, 0.66)!important;
+  color: #fff;
+  line-height: 3.5rem!important;
+  padding-left: 135px!important;
+  border: none!important;
+  margin: 0.5%!important;
+}
+.dash-list-item img{
+  width: 100px!important;
+  height: 100px!important;
+}
+.dash-list-title{
+  text-transform: uppercase;
+  color: #000;
+  border: none!important;
+  padding: 2% 0;
+  font-size: 2em;
+}
+
+
 .dashboard-box h2, .dash-desc h1  {
   font-family: 'Montserrat', Calibri, Arial, sans-serif;
   color: #000;
@@ -64,13 +92,7 @@ padding: 11% 0;
 .dash-desc-box, .dash-details{
   height: 450px;
 }
-.dashboard-container{
-  width: 70%;
-  margin: 0 auto;
-}
-.dashboard-container .row, .dash-desc .row{
-  margin: 0 0 2% 0;
-}
+
 .dash-desc-box{
   background-color: rgba(14, 3, 0, 0.4);
   padding: 0;
