@@ -2,20 +2,20 @@
   <div class="col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2">
 
 
-<h3 >Potager {{gestion.potager.name}}</h3>
+<h3 >Potager {{gestion.hive.name}}</h3>
 
-<button ng-click="gestion.delete('potager', gestion.potager.slug)">Supprimer</button>
+<button ng-click="gestion.delete('potager', gestion.hive.slug)">Supprimer</button>
 
 
 <h4>Potager</h4>
 
 <div class="action-button-container">
-    <button class="pure-button" ng-click="gestion.display('potager', 'edit')" ng-hide="gestion.editPotager">Editer</button>
+    <button class="pure-button" ng-click="gestion.display('potager', 'edit')" ng-hide="gestion.editHive">Editer</button>
 </div>
 
-<potagerdisplay ng-hide="gestion.editPotager"></potagerdisplay>
+<potagerdisplay ng-hide="gestion.editHive"></potagerdisplay>
 
-<potagereditform ng-show="gestion.editPotager"></potagereditform>
+<potagereditform ng-show="gestion.editHive"></potagereditform>
 
 
 

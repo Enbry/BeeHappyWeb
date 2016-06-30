@@ -3,16 +3,15 @@
 
     function MeasuresService($resource, $localStorage){
 
-        var apiPath = 'https://urbanpotager.labesse.me';
+        var apiPath = 'https://bee-happy.labesse.me';
         var token =  $localStorage.user.token;
 
         /**
-         * Get measures of a garden
+         * Get measures of a hive
          * */
-        var resource = $resource(apiPath+'/gardens/:slugGarden/measures/:slugType', {
-            slugGarden: '@slugGarden',
+        var resource = $resource(apiPath+'/hives/:slugHive/measures/:slugType', {
+            slugHive: '@slugHive',
             slugType: '@slugType'
-
         }, {
             get:{
                 headers:{
@@ -28,7 +27,3 @@
     }
     controllers.factory('MeasuresService', MeasuresService);
 })();
-
-
-
-

@@ -3,7 +3,7 @@
 
     function UserService($resource, $localStorage) {
 
-        var apiPath = 'https://urbanpotager.labesse.me';
+        var apiPath = 'https://bee-happy.labesse.me';
         var tok = "";
         if ($localStorage.user){
             tok =  $localStorage.user.token;

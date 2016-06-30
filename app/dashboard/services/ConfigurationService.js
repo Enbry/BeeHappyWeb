@@ -3,13 +3,13 @@
 
     function ConfigurationService($resource, $localStorage){
 
-        var apiPath = 'https://urbanpotager.labesse.me';
+        var apiPath = 'https://bee-happy.labesse.me'
         var token =  $localStorage.user.token;
 
         /**
          * Interact with configurations
          **/
-        var resourceConfig = $resource(apiPath+'/configurations/:slug', {
+        var resourceConfig = $resource(apiPath+'/types/:slug', {
             slug: '@slug'
         }, {
             //Post new configuration
@@ -94,5 +94,3 @@
     }
     controllers.factory('ConfigurationService', ConfigurationService);
 })();
-
-

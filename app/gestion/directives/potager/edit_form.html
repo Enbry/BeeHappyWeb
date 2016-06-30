@@ -1,40 +1,10 @@
-<form ng-submit="gestion.edit('potager', gestion.potager.slug, gestion.potagerCopy)">
-    <label for="potager.name">Nom</label>
-    <input type="text" id="potager.name" ng-model="gestion.potagerCopy.name" ng-value="gestion.potager.name"/>
+<form ng-submit="gestion.edit('potager', gestion.hive.slug, gestion.hiveCopy)">
+    <label for="hive.name">Nom</label>
+    <input type="text" id="hive.name" ng-model="gestion.hiveCopy.name" ng-value="gestion.hive.name"/>
     <br>
-    <label for="potager.description">Description</label>
-    <textarea type="text" id="potager.description" ng-model="gestion.potagerCopy.description">{{gestion.potager.description}}</textarea>
+    <label for="hive.description">Description</label>
+    <textarea type="text" id="hive.description" ng-model="gestion.hiveCopy.description" ng-value="gestion.hive.description">{{gestion.hive.description}}</textarea>
     <br>
-
-    <label for="potager.address1">Adresse (ligne1)</label>
-    <input type="text" id="potager.address1" ng-model="gestion.potagerCopy.line1" ng-value="gestion.potager.address.line1"/>
-    <br>
-    <label for="potager.address2">Adresse (ligne2)</label>
-    <input type="text" id="potager.address2" ng-model="gestion.potagerCopy.line2" ng-value="gestion.potager.address.line2"/>
-    <br>
-    <label for="potager.zipCode">Code Postal</label>
-    <input type="text" id="potager.zipCode" ng-model="gestion.potagerCopy.zipCode" ng-value="gestion.potager.address.zipCode"/>
-    <br>
-    <label for="potager.city">Ville</label>
-    <input type="text" id="potager.city" ng-model="gestion.potagerCopy.city" ng-value="gestion.potager.address.city"/>
-    <br>
-    <label for="potager.country">Pays</label>
-    <input type="text" id="potager.country" ng-model="gestion.potagerCopy.country" ng-value="gestion.potager.address.country"/>
-    <br>
-    <label>Publique: </label>
-    <label for="potager.pulic.true">Oui</label>
-    <input type="radio" id="potager.pulic.true" ng-model="gestion.potagerCopy.isPublic" ng-value="true" ng-checked="gestion.potager.is_public === true"/>
-    <label for="potager.pulic.false">Non</label>
-    <input type="radio" id="potager.pulic.false" ng-model="gestion.potagerCopy.isPublic" ng-value="false" ng-checked="gestion.potager.is_public === false"/>
-    <br>
-    <label>Afficher la position: </label>
-    <label for="potager.location.true">Oui</label>
-    <input type="radio" id="potager.location.true" ng-model="gestion.potagerCopy.showLocation" ng-value="true" ng-checked="gestion.potager.show_location === true"/>
-    <label for="potager.location.false">Non</label>
-    <input type="radio" id="potager.location.false" ng-model="gestion.potagerCopy.showLocation" ng-value="false" ng-checked="gestion.potager.show_location === false"/>
-    <br>
-
-
 
     <button class="pure-button" type="reset" ng-click="gestion.reset('potager', 'edit')">Annuler</button>
     <button class="pure-button" type="submit">Valider</button>

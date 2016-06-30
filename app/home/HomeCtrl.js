@@ -8,23 +8,23 @@ controllers.controller('HomeCtrl', function ($location, $scope, PotagerService) 
   var path = $location.path();
   vm.listMarkers = [];
 
-  vm.constructMarkers = function () {
+  /*vm.constructMarkers = function () {
     /**
     * Récupération potagers publiques
     */
-    PotagerService.resource.get(function (datas) {
-      vm.listePotagerPublic = datas.gardens;
+    /*PotagerService.resource.get(function (datas) {
+      vm.listePotager = datas.hives;
       var listMarkers = [];
       var tp;
-      for(var i = 0; i < vm.listePotagerPublic.length;i++){
+      for(var i = 0; i < vm.listePotager.length;i++){
         var marker = {};
-        if(vm.listePotagerPublic[i].coordinate != undefined){
+        if(vm.listePotager[i].coordinate != undefined){
           var m = "m"+ (i+1);
           marker[m] = {
-            lat: Math.round(vm.listePotagerPublic[i].coordinate.lat*100)/100,
-            lng: Math.round(vm.listePotagerPublic[i].coordinate.lng*100)/100,
+            lat: Math.round(vm.listePotager[i].coordinate.lat*100)/100,
+            lng: Math.round(vm.listePotager[i].coordinate.lng*100)/100,
             focus: false,
-            message: vm.listePotagerPublic[i].name,
+            message: vm.listePotager[i].name,
             icon: local_icons.bee_icon
           }
           console.log(marker[m]);
@@ -40,7 +40,7 @@ controllers.controller('HomeCtrl', function ($location, $scope, PotagerService) 
       }, {});;
       $scope.addMarkers(convertedListMarkers);
     });
-  };
+  };*/
 
   var local_icons = {
     default_icon: {},
@@ -130,7 +130,7 @@ controllers.controller('HomeCtrl', function ($location, $scope, PotagerService) 
   /**
   * Point d'entrée du controller
   */
-  (function () {
+/*  (function () {
     vm.constructMarkers();
-  })();
+  })();*/
 });

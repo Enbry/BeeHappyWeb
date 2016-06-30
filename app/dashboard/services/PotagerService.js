@@ -3,7 +3,7 @@
 
     function PotagerService($resource, $localStorage) {
 
-        var apiPath = 'https://urbanpotager.labesse.me';
+        var apiPath = 'https://bee-happy.labesse.me';
         var token = "";
         if ($localStorage.user){
             token =  $localStorage.user.token;
@@ -12,7 +12,7 @@
         /**
          * All public gardens
          **/
-        var resource = $resource(apiPath+'/gardens/:id', {id: '@id'}, {
+        var resource = $resource(apiPath+'/hives/:slug', {slug: '@slug'}, {
             get: {
                 method: 'GET',
                 headers:{
@@ -50,7 +50,7 @@
             }
         });
 
-        var resourcePersonalGardens = $resource(apiPath+'/me/gardens', {}, {
+        var resourcePersonalHives = $resource(apiPath+'/hives', {}, {
             query: {
                 method:"GET",
                 headers:{
@@ -61,7 +61,7 @@
         });
         return {
             resource: resource,
-            resourcePersonalGardens: resourcePersonalGardens
+            resourcePersonalHives: resourcePersonalHives
         };
     }
 
