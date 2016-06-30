@@ -1,17 +1,15 @@
-<div class="dash-title">
 
-</div>
-<div class="container-fluid">
+<div class="container-fluid alert-edit-page">
   <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3 edit-alert no-pad">
     <div class="alert-box">
       <h1>Alerte {{gestion.alert.name}}</h1>
-      <alerteditform ng-show="gestion.editAlert"></alerteditform>
+
       <div class="gestion-btn" ng-hide="gestion.editAlert">
         <button class="mui-btn mui-btn--fab hvr-sweep-to-right edit-btn" ng-click="gestion.display('alert', 'edit', 'solo')"><i class="fa fa-pencil"></i></button>
         <button class="btn-delete mui-btn mui-btn--fab hvr-sweep-to-right" ng-click="gestion.delete('alert', gestion.alert.slug)"><i class="fa fa-trash"></i></button>
       </div>
     </div>
-
+<alerteditform ng-show="gestion.editAlert"></alerteditform>
     <div class="" ng-hide="gestion.editAlert">
       <div class="alert-box">
         <h3>Description</h3>

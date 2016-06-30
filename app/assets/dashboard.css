@@ -12,6 +12,9 @@
   border-radius: 10px;
 
 }
+.dashboard.ng-scope {
+    height: 90vh;
+}
 .dash-content-box:hover, .dash-content-box:focus, .dash-content-box:active {
   box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
   -webkit-transform: scale(1.1);
