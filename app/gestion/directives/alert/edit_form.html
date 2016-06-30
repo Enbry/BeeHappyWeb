@@ -62,9 +62,9 @@
     <option
             ng-repeat="type in gestion.types"
             value="{{type.slug}}"
-            ng-selected="type.slug == gestion.alert.type.slug"
+            ng-selected="type.slug == gestion.alert.type"
     >
-        {{type.name}}
+        {{type.slug}}
     </option>
 </select>
 

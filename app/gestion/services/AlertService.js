@@ -49,7 +49,7 @@
         /**
          * Interact with gardens with alert
          * */
-        var resourceAlertHives = $resource(apiPath+'/gardens/:slugHive/alerts/:slugAlert', {
+        var resourceAlertHives = $resource(apiPath+'/hives/:slugHive/alerts/:slugAlert', {
             slugHive: '@slugHive',
             slugAlert: '@slugAlert'
 
