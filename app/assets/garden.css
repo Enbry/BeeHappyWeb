@@ -37,7 +37,26 @@
   transition-timing-function: ease-out;
 }
 .edit-btn{
-  background-color: #ffe976!important;
+  background-color: #ffd912!important;
+
+}
+.dash-edit{
+  position: absolute!important;
+  bottom: 4%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.dash-left p{
+  padding: 22% 0;
+  font-style: italic;
+}
+.dash-box h4:after{
+  background: -moz-linear-gradient(left, rgba(147,184,189,0) 0%, rgba(147,184,189,0.8) 20%, rgba(147,184,189,1) 53%, rgba(147,184,189,0.8) 79%, rgba(147,184,189,0) 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(147,184,189,0)), color-stop(20%,rgba(147,184,189,0.8)), color-stop(53%,rgba(147,184,189,1)), color-stop(79%,rgba(147,184,189,0.8)), color-stop(100%,rgba(147,184,189,0)));
+  background: -webkit-linear-gradient(left, rgba(147,184,189,0) 0%,rgba(147,184,189,0.8) 20%,rgba(147,184,189,1) 53%,rgba(147,184,189,0.8) 79%,rgba(147,184,189,0) 100%);
+  background: -o-linear-gradient(left, rgba(147,184,189,0) 0%,rgba(147,184,189,0.8) 20%,rgba(147,184,189,1) 53%,rgba(147,184,189,0.8) 79%,rgba(147,184,189,0) 100%);
+  background: -ms-linear-gradient(left, rgba(147,184,189,0) 0%,rgba(147,184,189,0.8) 20%,rgba(147,184,189,1) 53%,rgba(147,184,189,0.8) 79%,rgba(147,184,189,0) 100%);
+  background: linear-gradient(left, rgba(147,184,189,0) 0%,rgba(147,184,189,0.8) 20%,rgba(147,184,189,1) 53%,rgba(147,184,189,0.8) 79%,rgba(147,184,189,0) 100%);
 }
 .edit-btn:before {
   content: "";
@@ -47,7 +66,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: #ffc376;
+  background: #f7e16e;
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
   -webkit-transform-origin: 0 50%;
@@ -109,49 +128,58 @@
 .dashbox {
   background-color: rgba(27, 24, 4, 0.66)!important;
   color: #fff;
+  margin-top: 1%;
+  padding: 2% 2% 12% 2%;
+
 }
 .dash-box{
   background-color: rgba(27, 24, 4, 0.66)!important;
   margin-right: 1%  ;
   color: #fff;
-  padding: 7%;
+  padding: 2% 2% 12% 2%;
   margin-top: 3px;
+  height: 20vh;
 }
 .dash-box1{
   background-color: rgba(27, 24, 4, 0.66)!important;
   margin-left: 0.5%;
   margin-right: 0.5%;
   color: #fff;
-  padding: 7%;
+  padding: 2% 2% 12% 2%;
   margin-top: 3px;
+  height: 20vh;
 }
 .dash-box2{
   background-color: rgba(27, 24, 4, 0.66)!important;
   margin-left: 1%  ;
   color: #fff;
-  padding: 7%;
+  padding: 2% 2% 12% 2%;
   margin-top: 3px;
+  height: 20vh;
 }
 .dash-box3{
   background-color: rgba(27, 24, 4, 0.66)!important;
   margin-right: 1%  ;
   color: #fff;
-  padding: 7%;
+  padding: 2% 2% 12% 2%;
   margin-top: 3px;
+  height: 20vh;
 }
 .dash-box4{
   background-color: rgba(27, 24, 4, 0.66)!important;
   margin-left: 0.5%;
   margin-right: 0.5%;
   color: #fff;
-  padding: 7%;
+  padding: 2% 2% 12% 2%;
   margin-top: 3px;
+  height: 20vh;
 }
 .dash-left{
   background-color: rgba(27, 24, 4, 0.66)!important;
   color: #fff;
-  margin-top: 10px;
-  height: 95vh  ;
+  margin-top: 46%;
+  height: 50vh;
+  padding: 5% 2% 12% 6%;
 }
 .dash-right{
   height: 70vh;
@@ -160,7 +188,13 @@
 .dashbox legend{
   color: #fff;
 }
+.dash-right p{
+  font-size: 3.2em;
+  position: absolute;
+  right: 4%;
+  bottom: 2%;
 
+}
 .dash-desc-box{
   background-color: rgba(14, 3, 0, 0.4);
   padding: 0;
@@ -224,6 +258,12 @@
   border-radius: 10px;
 
 }
+.liveDatas h4{
+  font-size: 25px;
+  text-transform: uppercase;
+
+}
+
 .dash-chart legend h1{
   font-family: 'Montserrat', Calibri, Arial, sans-serif;
   color: #000;
@@ -240,7 +280,7 @@
 }
 select#dataType {
   background-color: rgba(255, 255, 255, 0.73);
-
+  color: #000!important;
 }
 select#dataType option:checked {
   background-color: rgba(255, 255, 255, 0.73);
@@ -250,7 +290,7 @@ select#dataType option:checked {
   margin: 2em 0;
   background-color: rgba(255, 255, 255, 0.73);
   padding: 2% 2% 2% 0%;
-  height: 421px;
+  height: 285px;
 }
 .dash-chart h2{
   margin-top: 5%;

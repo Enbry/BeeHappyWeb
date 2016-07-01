@@ -1,27 +1,42 @@
 
 <form ng-submit="gestion.new('alert', gestion.alertModel, gestion.potager.slug)">
-    <label for="nameAlertNew">Nom</label>
-    <input id="nameAlertNew" type="text" ng-model="gestion.alertModel.name" placeholder="Nom de l'alerte"/>
-    <br>
-    <label for="descriptionAlertNew">Description</label>
-    <textarea id="descriptionAlertNew" ng-model="gestion.alertModel.description" placeholder="description de l'alerte"></textarea>
-    <br>
-    <label for="messageAlertNew">Message</label>
-    <input id="messageAlertNew" type="text" ng-model="gestion.alertModel.message" placeholder="Message à afficher"/>
-    <br>
-    <label for="typesAlertNew">Types</label>
+  <div class="mui-textfield  mui-textfield--float-label">
+    <legend>Nom</legend>
+    <input type="text" id="hive.name" ng-model="gestion.hiveCopy.name" ng-value="gestion.hive.name"/>
+
+  </div>
+  <div class="mui-textfield  mui-textfield--float-label">
+    <legend>Description</legend>
+    <textarea id="descriptionAlertNew" ng-model="gestion.alertModel.description" ></textarea>
+
+  </div>
+
+  <div class="mui-textfield  mui-textfield--float-label">
+    <legend>Message</legend>
+    <input id="messageAlertNew" type="text" ng-model="gestion.alertModel.message" />
+  </div>
+
+  <div class="mui-select  mui-select--float-label">
+    <legend>Types</legend>
     <select id="typesAlertNew" ng-model="gestion.alertModel.type">
-        <option ng-repeat="type in gestion.types" value="{{type.slug}}">{{type.name}}</option>
+      <option ng-repeat="type in gestion.types" value="{{type.slug}}">{{type.name}}</option>
     </select>
-    <br>
-    <label for="comparisonAlertNew">Comparaison</label>
+  </div>
+
+  <div class="mui-select  mui-select--float-label">
+    <legend>Comparaison</legend>
     <select id="comparisonAlertNew" ng-model="gestion.alertModel.comparison">
-        <option ng-repeat="comparison in gestion.comparisonTable" value="{{$index+1}}">{{comparison}}</option>
+      <option ng-repeat="comparison in gestion.comparisonTable" value="{{$index+1}}">{{comparison}}</option>
     </select>
-    <br>
-    <label for="tresholdAlertNew">Seuil</label>
-    <input id="tresholdAlertNew" type="number" step="any" ng-model="gestion.alertModel.threshold" placeholder="seuil voulu"/>
-    <br>
-    <button class="pure-button" type="reset" ng-click="gestion.reset('alert','new')">Annuler</button>
-    <button class="pure-button" type="submit">Ajouter</button>
+  </div>
+
+  <div class="mui-textfield  mui-textfield--float-label">
+    <legend>Seuil</legend>
+    <input id="tresholdAlertNew" type="number" step="any" ng-model="gestion.alertModel.threshold"/>
+  </div>
+
+  <div class="gestion-btn">
+    <button class="btn-reset mui-btn mui-btn--fab hvr-sweep-to-right" type="reset" ng-click="gestion.reset('alert','new')"><i class="fa fa-angle-double-left"></i></button>
+    <button class="btn-more mui-btn mui-btn--fab hvr-sweep-to-right" type="submit"><i class="fa fa-plus"></i></button>
+  </div>
 </form>

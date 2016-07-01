@@ -20,7 +20,7 @@ angular.module('myApp', ['ngRoute', 'controllers', 'toaster'])
       templateUrl: 'dashboard/potager/potager.html',
       controller: 'PotagerCtrl as potager'
     })
-    .when('/potager/:id', {
+    .when('/potager/:hive', {
       templateUrl: 'dashboard/potager/editGarden.html',
       controller: 'EditGardenCtrl as editGarden'
     })

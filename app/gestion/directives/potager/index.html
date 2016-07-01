@@ -1,62 +1,38 @@
-<div class="col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2 edit-potager">
-  <div class="col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2">
+<div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3 edit-potager">
+  <div class="alert-box">
+    <h1 >Ruche {{gestion.hive.name}}</h1>
+    <button class="btn-delete mui-btn mui-btn--fab hvr-sweep-to-right gestion-btn" ng-click="gestion.delete('potager', gestion.hive.slug)"><i class="fa fa-trash"></i></button>
+  </div>
+
+  <div class="alert-box">
+    <h3>Ruche</h3>
 
 
-<h3 >Potager {{gestion.potager.name}}</h3>
+    <potagerdisplay ng-hide="gestion.editHive"></potagerdisplay>
 
-<button ng-click="gestion.delete('potager', gestion.potager.slug)">Supprimer</button>
+    <potagereditform ng-show="gestion.editHive"></potagereditform>
+    <div class=" action-button-container">
+      <button class="edit-btn mui-btn mui-btn--fab hvr-sweep-to-right gestion-btn" ng-click="gestion.display('potager', 'edit')" ng-hide="gestion.editHive"><i class="fa fa-pencil"></i></button>
+    </div>
+  </div>
 
+  <div class="alert-box">
 
-<h4>Potager</h4>
-
-<div class="action-button-container">
-    <button class="pure-button" ng-click="gestion.display('potager', 'edit')" ng-hide="gestion.editPotager">Editer</button>
-</div>
-
-<potagerdisplay ng-hide="gestion.editPotager"></potagerdisplay>
-
-<potagereditform ng-show="gestion.editPotager"></potagereditform>
-
+    <h3>Alertes</h3>
+    <div>
+      <potagerlistalert></potagerlistalert>
 
 
-<h4>Configuration</h4>
+      <alertnewForm ng-show="gestion.newAlert"></alertnewForm>
 
-<div class="action-button-container">
-    <button class="pure-button" ng-click="gestion.display('configuration', 'new')" ng-if="!gestion.configuration">Créer une configuration</button>
-    <button class="pure-button" ng-click="gestion.display('configuration', 'edit')" ng-hide="gestion.editConfiguration" ng-if="gestion.configuration">Editer</button>
-    <button class="pure-button" ng-click="gestion.display('configuration', 'change')" ng-if="gestion.configurations.length">Changer pour une autre configuration existante</button>
-    <button class="pure-button" ng-click="gestion.unlink('configuration', gestion.potager.slug)" ng-show="gestion.configuration">Dé-associer</button>
-</div>
+      <alertchangeform ng-show="gestion.changeAlert"></alertchangeform>
 
+      <div class="gestion-btn" ng-hide="gestion.newAlert||gestion.changeAlert">
+        <button class="btn-more mui-btn mui-btn--fab hvr-sweep-to-right " ng-click="gestion.display('alert', 'new')">+</button>
+        <button class="btn-link mui-btn mui-btn--fab hvr-sweep-to-right " ng-click="gestion.display('alert', 'change')"><i class="fa fa-link"></i></button>
+      </div>
+    </div>
 
-<p ng-hide="gestion.changeConfiguration||gestion.newConfiguration||gestion.configuration">No configuration</p>
-
-<configurationdisplay ng-hide="gestion.changeConfiguration||gestion.newConfiguration||gestion.editConfiguration||!gestion.configuration"></configurationdisplay>
-
-<configurationchangeform ng-show="gestion.changeConfiguration"></configurationchangeform>
-
-<configurationnewform ng-if="!gestion.configuration" ng-show="gestion.newConfiguration"></configurationnewform>
-
-<configurationeditform ng-if="gestion.configuration" ng-show="gestion.editConfiguration"></configurationeditform>
-
-
-
-
-<h4>Alertes</h4>
-<div>
-    <potagerlistalert></potagerlistalert>
-
-
-        <alertnewForm ng-show="gestion.newAlert"></alertnewForm>
-
-        <alertchangeform ng-show="gestion.changeAlert"></alertchangeform>
-
-        <div  ng-hide="gestion.newAlert||gestion.changeAlert">
-            <button class="pure-button" ng-click="gestion.display('alert', 'new')">Créer une alerte</button>
-            <button class="pure-button" ng-click="gestion.display('alert', 'change')">Associer une alerte existante</button>
-        </div>
-</div>
-
-<button class="pure-button" ng-click="gestion.goBack()">Retours</button>
-</div>
+  </div>
+    <button class="back-dash" ng-click="gestion.goBack()"><< RETOUR AU DASHBOARD</i></button>
 </div>

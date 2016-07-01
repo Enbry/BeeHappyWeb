@@ -4,10 +4,14 @@
     <div id="alert"></div>
 
     <div id="wrapper">
+      <div class="wrapper-left">
+        <img class="wrapper-logo" src="assets/images/logo-BH.svg">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
       <div id="register" class="signin" show-me="isVisible">
-        <form ng-submit="inscription.inscription(iData)"  autocomplete="on">
+        <form ng-submit="inscription.inscription(iData)">
           <fieldset>
-            <legend><h1>Inscription</h1></legend>
+            <legend><img src="assets/images/home-main-ic.svg" class="img-responsive login-main-ic"><h1>Inscription</h1></legend>
             <div class="mui-textfield mui-textfield--float-label txt-area">
                 <input id="usernamesignup" name="usernamesignup" type="text" required ng-model="iData.username">
                 <label for="usernamesignup" class="uname">Pseudo</label>
@@ -29,7 +33,9 @@
         </form>
       </div>
       <div class="signup" hide-me="isHidden" id="login" >
-        <form ng-submit="inscription.connexion(cData)" autocomplete="on">
+        <img src="assets/images/home-main-ic.svg" class="img-responsive login-main-ic">
+        <!--<img src="assets/images/login-ic.svg" class="img-responsive login-ic">-->
+        <form ng-submit="inscription.connexion(cData)">
           <fieldset>
 
             <legend><h1>Connexion</h1>  </legend>
@@ -49,8 +55,8 @@
           </p>
         </form>
       </div>
-      <div class="col-md-6 col-sm-6 log-bg">
-      </div>
+      <!--<div class="col-md-6 col-sm-6 log-bg">
+      </div>-->
 
 
     </div>

@@ -12,7 +12,7 @@ controllers.controller('GestionCtrl', function ($location, $window, $route, Pota
             vm.title = "Page gestion";
             vm.longitude = 40.095;
             vm.latitude = -3.823;
-            vm.editPotager = false;
+            vm.editHive = false;
             vm.editConfiguration = false;
             vm.changeConfiguration = false;
             vm.newConfiguration = false;
@@ -83,7 +83,6 @@ controllers.controller('GestionCtrl', function ($location, $window, $route, Pota
                     zoom: 8
                 }
             });
-            console.log('here');
 
             //Récupération des paramètres de l'url
             var params = $location.search();
@@ -123,32 +122,32 @@ controllers.controller('GestionCtrl', function ($location, $window, $route, Pota
                 });
 
 
-            }else if (params.potager)
+              }else if (params.hive)
             {
 
                 vm.page = "potager";
 
-                PotagerService.resource.get({id: params.potager}, function(datas){
+                PotagerService.resource.get({slug: params.hive}, function(datas){
                     console.log(datas);
 
-                    vm.potager = datas.garden;
+                    vm.hive = datas.hive;
 
-                    //vm.potagerCopy = angular.copy(vm.potager);
-                    vm.potagerCopy = {
-                        "name": vm.potager.name,
-                        "description": vm.potager.description,
-                        "isPublic": vm.potager.isPublic,
-                        //"latitude": parseFloat(vm.potager.coordinate.lat),
-                        //"longitude": parseFloat(vm.potager.coordinate.lng),
-                        "showLocation": vm.potager.show_location,
-                        "country": vm.potager.address.country,
-                        "city": vm.potager.address.city,
-                        "zipCode": vm.potager.address.zipCode,
-                        "address1": vm.potager.address.line1,
-                        "address2": vm.potager.address.line2
+                    //vm.hiveCopy = angular.copy(vm.hive);
+                    vm.hiveCopy = {
+                        "name": vm.hive.name,
+                        "description": vm.hive.description,
+                        "isPublic": vm.hive.isPublic,
+                        //"latitude": parseFloat(vm.hive.coordinate.lat),
+                        //"longitude": parseFloat(vm.hive.coordinate.lng),
+                        "showLocation": vm.hive.show_location,
+                        "country": vm.hive.address.country,
+                        "city": vm.hive.address.city,
+                        "zipCode": vm.hive.address.zipCode,
+                        "address1": vm.hive.address.line1,
+                        "address2": vm.hive.address.line2
                     };
 
-                    ConfigurationService.resourceConfiguredGardens.get({slugGarden: params.potager}, function (datas) {
+                    ConfigurationService.resourceConfiguredHives.get({slugHive: params.hive}, function (datas) {
 
                         vm.configuration = datas.configuration;
 
@@ -184,7 +183,7 @@ controllers.controller('GestionCtrl', function ($location, $window, $route, Pota
                         vm.configurations = datas.configurations;
                     });
 
-                    AlertService.resourceAlertGardens.get({slugGarden: params.potager}, function(datas) {
+                    AlertService.resourceAlertHives.get({slugHive: params.hive}, function(datas) {
                         console.log(datas);
 
                         vm.alerts = datas.alerts;
@@ -239,11 +238,11 @@ controllers.controller('GestionCtrl', function ($location, $window, $route, Pota
                 });
 
 
-            } else if ($location.hash() === "newPotager")
+            } else if ($location.hash() === "newhive")
             {
-                vm.page = "newPotager";
+                vm.page = "newhive";
 
-                vm.potager = {
+                vm.hive = {
                     "name": null,
                     "description": null,
                     "isPublic": null,
@@ -316,7 +315,7 @@ controllers.controller('GestionCtrl', function ($location, $window, $route, Pota
                     }
                 } else if (type === "potager")
                 {
-                    vm.editPotager = false;
+                    vm.editHive = false;
                 }
             };
 
@@ -366,16 +365,16 @@ controllers.controller('GestionCtrl', function ($location, $window, $route, Pota
                     }
                 } else if (type === "potager")
                 {
-                    vm.editPotager = true;
+                    vm.editHive = true;
                 }
             };
 
-            vm.new = function(type, model, slugGarden)
+            vm.new = function(type, model, slugHive)
             {
                 if(type==="configuration")
                 {
                     ConfigurationService.resourceConfig.post({}, model ,function (datas){
-                        ConfigurationService.resourceConfiguredGardens.post({slugGarden: slugGarden, slugConfiguration: datas.configuration.slug},function(datas) {
+                        ConfigurationService.resourceConfiguredHives.post({slugHive: slugHive, slugConfiguration: datas.configuration.slug},function(datas) {
                             $route.reload();
                         });
 
@@ -384,7 +383,7 @@ controllers.controller('GestionCtrl', function ($location, $window, $route, Pota
                 {
                     AlertService.resourceAlert.post({}, model, function (datas) {
                         console.log(datas);
-                        AlertService.resourceAlertGardens.post({slugGarden: slugGarden, slugAlert:datas.alert.slug}, function(datas){
+                        AlertService.resourceAlertHives.post({slugHive: slugHive, slugAlert:datas.alert.slug}, function(datas){
                             $route.reload();
                         })
 
@@ -393,7 +392,7 @@ controllers.controller('GestionCtrl', function ($location, $window, $route, Pota
                 {
                     console.log(model);
                     PotagerService.resource.post({}, model, function(datas){
-                        $location.path(path).search({potager: datas.garden.slug});
+                        $location.path(path).search({hive: datas.garden.slug});
                     });
                 }
             };
@@ -414,24 +413,24 @@ controllers.controller('GestionCtrl', function ($location, $window, $route, Pota
                     });
                 } else if (type === "potager")
                 {
-                    PotagerService.resource.patch({id: slug}, changes, function(datas){
+                    PotagerService.resource.patch({slug: slug}, changes, function(datas){
 
                         $route.reload();
                     });
                 }
             };
 
-            vm.change = function(type, slugGarden, slug)
+            vm.change = function(type, slugHive, slug)
             {
                 if(type === "configuration")
                 {
                     if(vm.configuration)
                     {
-                        ConfigurationService.resourceConfiguredGardens.delete({slugGarden: slugGarden}, function (datas){});
+                        ConfigurationService.resourceConfiguredHives.delete({slugHive: slugHive}, function (datas){});
                     }
 
-                    ConfigurationService.resourceConfiguredGardens.post({slugGarden: slugGarden, slugConfiguration: slug}, function (datas){
-                        ConfigurationService.resourceConfiguredGardens.get({slugGarden: slugGarden}, function (datas) {
+                    ConfigurationService.resourceConfiguredHives.post({slugHive: slugHive, slugConfiguration: slug}, function (datas){
+                        ConfigurationService.resourceConfiguredHives.get({slugHive: slugHive}, function (datas) {
                             vm.configuration = datas.configuration;
                             vm.changeConfiguration = false;
                         });
@@ -439,23 +438,23 @@ controllers.controller('GestionCtrl', function ($location, $window, $route, Pota
                 } else if(type === "alert")
                 {
                     console.log(slug);
-                    AlertService.resourceAlertGardens.post({slugGarden: slugGarden, slugAlert: slug}, function(datas){
+                    AlertService.resourceAlertHives.post({slugHive: slugHive, slugAlert: slug}, function(datas){
                         $route.reload();
                     });
                 }
             };
 
-            vm.unlink = function(type, slugGarden, slug)
+            vm.unlink = function(type, slugHive, slug)
             {
                 if(type === "configuration")
                 {
-                    ConfigurationService.resourceConfiguredGardens.delete({slugGarden: slugGarden}, function (datas){
+                    ConfigurationService.resourceConfiguredHives.delete({slugHive: slugHive}, function (datas){
                         delete vm.configuration;
                     });
                 } else if (type === "alert")
                 {
                     console.log(slug);
-                    AlertService.resourceAlertGardens.delete({slugGarden: slugGarden, slugAlert: slug}, function(datas){
+                    AlertService.resourceAlertHives.delete({slugHive: slugHive, slugAlert: slug}, function(datas){
                         $route.reload();
                     })
                 }
@@ -471,7 +470,7 @@ controllers.controller('GestionCtrl', function ($location, $window, $route, Pota
                     });
                 } else if (type === "potager")
                 {
-                    PotagerService.resource.delete({id: slug}, function(datas){
+                    PotagerService.resource.delete({slug: slug}, function(datas){
                         $location.path('/dashboard').search({});
                     });
                 } else if (type === "alert")
@@ -494,7 +493,7 @@ controllers.controller('GestionCtrl', function ($location, $window, $route, Pota
                     {
                         if(type === "potager")
                         {
-                            $location.path(path).search({potager: slug});
+                            $location.path(path).search({hive: slug});
                         } else if (type === "configuration")
                         {
                             $location.path(path).search({configuration: slug});
@@ -512,8 +511,8 @@ controllers.controller('GestionCtrl', function ($location, $window, $route, Pota
                 OpenStreetMapService.resource.get({ street:address2?address1:address1+address2,city: city, postalcode:postalcode, country: country}, function(datas){
                     if(datas[0])
                     {
-                        vm.potager.longitude = datas[0].lon;
-                        vm.potager.latitude= datas[0].lat;
+                        vm.hive.longitude = datas[0].lon;
+                        vm.hive.latitude= datas[0].lat;
                         $scope.markers['mainMarker'].lng = parseFloat(datas[0].lon);
                         $scope.markers['mainMarker'].lat= parseFloat(datas[0].lat);
                         $scope.center.lng = parseFloat(datas[0].lon);
@@ -527,7 +526,7 @@ controllers.controller('GestionCtrl', function ($location, $window, $route, Pota
              * Redirige l'utilisateur vers la page gestion
              */
             vm.goBack = function (type) {
-                $location.path('/potager').search({"param": vm.potager});
+                $location.path('/potager').search({"param": vm.hive});
             };
         }
 

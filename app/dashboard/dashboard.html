@@ -4,13 +4,13 @@
     <div class="col-md-12">
       <ul class="collection dash-list">
         <!--<li class="dash-list-title">{{ dashboard.title }}</li>-->
-        <li class="collection-item avatar dash-list-item" ng-repeat="potager in dashboard.listePotagers.gardens">
-          <div class="dashSelection" ng-init="dashboard.addRandImages()" ng-click="dashboard.selectedPotager(potager)">
-            <img ng-src="{{ potager.imgRand }}" id="dashImage" alt="Urban Potager Picture" class="circle">
-            <span class="title dash-detail-title">{{ potager.name }}</span>
-            <p ng-class="dash" ng-click="dashboard.selectedPotager(potager)" ng-bind="potager.description">First Line <br>
+        <li class="collection-item avatar dash-list-item" ng-repeat="hive in dashboard.listePotagers.hives">
+          <div class="dashSelection" ng-init="dashboard.addRandImages()" ng-click="dashboard.selectedPotager(hive)">
+            <img ng-src="{{ hive.imgRand }}" id="dashImage" alt="Urban Potager Picture" class="circle">
+            <span class="title dash-detail-title">{{ hive.name }}</span>
+            <p ng-class="dash" ng-click="dashboard.selectedPotager(hive)" ng-bind="hive.description">First Line <br>
             </p>
-            <button class="mui-btn mui-btn--fab dash-button hvr-sweep-to-right" ng-click="dashboard.selectedPotager(potager)"><i class="fa fa-info"></i></button>
+            <button class="mui-btn mui-btn--fab dash-button hvr-sweep-to-right" ng-click="dashboard.selectedPotager(hive)"><i class="fa fa-info"></i></button>
           </div>
         </li>
       </ul>

@@ -3,7 +3,7 @@
 
     function AlertService($resource, $localStorage){
 
-        var apiPath = 'https://urbanpotager.labesse.me';
+        var apiPath = 'https://bee-happy.labesse.me';
         var token =  $localStorage.user.token;
 
         /**
@@ -49,8 +49,8 @@
         /**
          * Interact with gardens with alert
          * */
-        var resourceAlertGardens = $resource(apiPath+'/gardens/:slugGarden/alerts/:slugAlert', {
-            slugGarden: '@slugGarden',
+        var resourceAlertHives = $resource(apiPath+'/hives/:slugHive/alerts/:slugAlert', {
+            slugHive: '@slugHive',
             slugAlert: '@slugAlert'
 
         }, {
@@ -82,10 +82,8 @@
 
         return {
             resourceAlert: resourceAlert,
-            resourceAlertGardens: resourceAlertGardens
+            resourceAlertHives: resourceAlertHives
         };
     }
     controllers.factory('AlertService', AlertService);
 })();
-
-

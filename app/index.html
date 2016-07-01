@@ -46,14 +46,14 @@
 </head>
 <body ng-controller="MainCtrl">
   <div class="menu">
-    <div class="logo"><img src="assets/images/logo-BH.svg"></div>
+    <div class="logo"><a href="#/home"><img src="assets/images/logo-BH.svg"></a></div>
     <ul>
-      <li><a href="#/home">Home</a></li>
+      <li ng-if="log"><a href="#/home">Accueil</a></li>
       <li ng-if="log"><a href="#/dashboard">Dashboard</a></li>
-      <li ng-if="log"><a href="#/gestion">Gestion</a></li>
-      <li ng-if="log"><a href="#/profile"><i class="fa fa-user" aria-hidden="true"></i></a></li>
-      <li ng-if="!log"><a href="#/inscription"><i class="fa fa-sign-in" aria-hidden="true"></i></a></li>
-      <li ng-if="log"><a ng-click="logout()" href><i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
+      <li ng-if="log"><a href="#/gestion">Alertes</a></li>
+      <!--<li ng-if="log"><a href="#/profile"><i class="fa fa-user" aria-hidden="true"></i></a></li>-->
+      <li ng-if="!log"><a href="#/inscription">Connexion</a></li>
+      <li ng-if="log"><a ng-click="logout()" href>Déconnexion</a></li>
     </ul>
   </div>
   <div ng-view>
@@ -68,13 +68,7 @@
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
 -->
-<footer>
 
-
-<div class="col-md-12 text-center">
-  
-<p>COPYRIGHT 2016 URBANAPLANT - ALL RIGHTS RESERVED.</p>
-</div>
 </footer>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 

@@ -17,25 +17,26 @@
              * @returns {*|{method, isArray, transformResponse}}
              */
             vm.getDatas = function(){
-                return PotagerService.resourcePersonalGardens.query(function (datas) {
+                return PotagerService.resourcePersonalHives.query(function (datas) {
                     vm.listePotagers = datas;
+                    console.log(datas);
+
                 });
             };
-
 
             /**
              * Gestion des images aléatoires des dash
              */
             vm.addRandImages = function () {
-                for(var i = 0; i < vm.listePotagers.gardens.length; i++){
+                for(var i = 0; i < vm.listePotagers.hives.length; i++){
                     var imagRandom = vm.getImageRandom();
-                    vm.listePotagers.gardens[i].imgRand = imagRandom;
+                    vm.listePotagers.hives[i].imgRand = imagRandom;
                 }
             };
 
             vm.getImageRandom = function () {
-                var temp = Math.floor((Math.random() * 18) + 1);
-                return "assets/images/dashboards/"+ temp +".png";
+                var temp = Math.floor((Math.random() * 5) + 1);
+                return "assets/images/dashboards/"+ temp +".jpg";
             };
 
             /**

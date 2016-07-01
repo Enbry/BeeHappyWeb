@@ -78,6 +78,7 @@
 
 body{
   background-color: #443c3c;
+  position: relative!important;
 }
 
 * {
@@ -115,7 +116,6 @@ body{
 }
 .menu ul > li {
   display: inline;
-  text-transform: uppercase;
   margin: 0 8px;
 }
 .menu ul > li > a {
@@ -134,7 +134,8 @@ footer {
     height: 80px;
     background-color: #000;
     color: #fff;
-    
+    position: absolute;
+    bottom: 0;
 }
 @media (min-width: 1200px){
   .footer-social .social{

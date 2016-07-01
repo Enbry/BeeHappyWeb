@@ -3,7 +3,7 @@
 
     function TypeService($resource, $localStorage){
 
-        var apiPath = 'https://urbanpotager.labesse.me';
+        var apiPath = 'https://bee-happy.labesse.me';
         var token =  $localStorage.user.token;
 
         /**
@@ -53,5 +53,3 @@
     }
     controllers.factory('TypeService', TypeService);
 })();
-
-
